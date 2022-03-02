@@ -7,58 +7,207 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html lang="vi">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Real Estate</title>
-        <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+    <link rel="stylesheet" href="style.css">
 
-    <body>
-        <header>
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <nav class="nav d-flex">
+                <a href="#" class="logo">
+                    <img src="img/Brand-logos/logo.png" alt="logo">
+                </a>
+                <!-- Toggle bar -->
+                <div class="burger">
+                    <div class="toggle-open">
+                        <img src="img/toggle-open.svg" alt="toggle open">
+                    </div>
+                    <div class="toggle-close">
+                        <img src="img/toggle-close.svg" alt="toggle close">
+                    </div>
+                </div>
+                <div class="navigation-bar">
+                    <ul>
+                        <li class="active"><a href="#trangchu">Trang Chủ</a></li>
+                        <li><a href="#duan">Dự Án</a></li>
+                        <li><a href="#vechungtoi">Về Chúng Tôi </a></li>
+                        <li><a href="#lienhe">Liên Hệ</a></li>
+                        <li><a href="#">Đăng Kí</a></li>
+                        <li><a href="#" class="btn ">Đăng Nhập</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Trang Chủ -->
+        <section class="trangchu d-flex" id="trangchu">
+            <img class="trangchu-image" src="img/trangchu/trangchu1.jpg" alt="trangchu">
             <div class="container">
-                <nav class="nav d-flex">
-                    <a href="#" class="logo">
-                        <img src="img/logo.png" alt="logo">
-                    </a>
-                    <!-- Toggle bar -->
-                    <div class="burger">
-                        <div class="toggle-open">
-                            <img src="assets/images/toggle-open.svg" alt="toggle open">
-                        </div>
-                        <div class="toggle-close">
-                            <img src="assets/images/toggle-close.svg" alt="toggle close">
-                        </div>
+                <div class="trangchu-wrapper">
+                    <div class="col">
+                        <h3>Q Holdings</h3>
+                        <h1>Kiến Tạo <br>
+                            Giá Trị Sống</h1>
+                        <p>Là đơn vị dẫn đầu trong lĩnh vực kinh doanh bất động sản tại Khu công nghệ cao Hòa Lạc,
+                            Q Holdings tập trung cung cấp dịch vụ Tư vấn Thiết kế và Thi công, Tư vấn đầu tư và Phát
+                            triển dự án.
+                            Q Holdings cam kết cung cấp cho khách hàng những giải pháp và dịch vụ toàn diện,
+                            không ngừng gia tăng giá trị, lợi ích tối đa cho mọi khách hàng. </p>
+                        <a href="#" class="btn">Liên Hệ Ngay</a>
                     </div>
-                    <div class="navigation-bar">
-                        <ul>
-                            <li class="active"><a href="#trangchu">Trang Chủ</a></li>
-                            <li><a href="#duan">Dự Án</a></li>
-                            <li><a href="#vechungtoi">Về Chúng Tôi </a></li>
-                            <li><a href="#lienhe">Liên Hệ</a></li>
-                            <li><a href="#">Đăng Kí</a></li>
-                            <li><a href="#" class="btn ">Đăng Nhập</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                </div>
             </div>
-        </header>    
+        </section>
+        <!-- brand -->
+        <section class="brand pt-100">
+            <div class="container">
+                <div class="brand-wrapper d-flex">
+                    <img src="img/Brand-logos/logofpt.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logocen.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logonext.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logovin.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logovt.png" alt=" brand logo">
+                </div>
 
-        <div class="bg-image">
+            </div>
+        </section>
+        <!-- Dự Án -->
+        <section class="duan ptb-100" id="duan">
+            <div class="container">
+                <!-- section title -->
+                <div class="title-section">
+                    <h2>Dự Án</h2>
+                </div>
+                <div class="duan-wrapper d-flex">
+                    <!-- Dự Án 1 -->
+                    <div class="duan-item">
+                        <img src="img/duan/da1.jpg" alt="duan image" class="img-fluid">
+                        <div class="duan-content ">
+                            <h3 class="d-flex">MC HOUSE <span>$ &nbsp; 250:99</span></h3>
+                        </div>
+                    </div>
+                    <!-- Dự Án 2  -->
+                    <div class="duan-item">
+                        <img src="img/duan/da2.jpg" alt="duan image" class="img-fluid">
+                        <div class="duan-content ">
+                            <h3 class="d-flex">MC MANSION <span>$ &nbsp; 580:78</span></h3>
+                        </div>
+                    </div>
+                    <!-- Dự Án 3  -->
+                    <div class="duan-item">
+                        <img src="img/duan/da3.jpg" alt="duan image" class="img-fluid">
+                        <div class="duan-content ">
+                            <h3 class="d-flex">MC VILLAS <span>$ &nbsp; 650:00</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Về Chúng Tôi-->
+        <section class="vechungtoi " id="vechungtoi">
+            <div class="container">
+                <div class="vechungtoi-wrapper d-flex">
+                    <div class="aboutus-img">
+                        <img src="img/vechungtoi/vechungtoi1.jpg" alt="vechungtoi image" class="img-fluid">
+                    </div>
+                    <div class="vechungtoi-content">
+                        <h2>Về Chúng Tôi</h2>
+                        <p>Minh Chí Holdings là thành quả của sự ấp ủ sau nhiều năm tham gia vào thị trường bất động sản
+                            của CEO Q.
+                            Là một thương hiệu trẻ trên thị trường Bất động sản.</p>
+                        <p>Minh Chí Holdings ý thức được rằng chất lượng sản phẩm,
+                            dịch vụ chính là chìa khoá vạn năng mở cánh cửa thành công và
+                            xây dựng một niềm tin vững chắc từ khách hàng. </p>
 
+                        <a href="#" class="btn">Đọc Thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tin Tức -->
+        <section class="tintuc ptb-100" id="tintuc">
+            <div class="container">
+                <!-- section title -->
+                <div class="title-section">
+                    <h2>Tin Tức</h2>
+                    <p>Đăng kí ngay với chúng tôi để nhận nhưng tin tức mới nhất,
+                        và các dự án trọng điểm tại Hoà Lạc</p>
+                </div>
+                <div class="tintuc-wrapper d-flex">
+                    <input type="text" placeholder="Địa chỉ Email của bạn...">
+                    <a href="#" class="btn">Gửi Ngay!</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Liên Hệ  -->
+    <section class="lienhe ptb-100" id="lienhe">
+        <div class="container">
+            <h2 class="head">Liên Hệ</h2>
+            <form id="basic-form" action="" method="post">
+                <div class="contact-inner d-flex">
+                    <div class="input-block form-item">
+                        <label for="">Họ</label>
+                        <input type="text" name="ho" required>
+                    </div>
+                    <div class="input-block form-item">
+                        <label for="">Tên</label>
+                        <input type="text" name="ten" required>
+                    </div>
+                    <div class="input-block form-item">
+                        <label for="">Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="input-block form-item">
+                        <label for="">Số Điện Thoại</label>
+                        <input type="text" name="sdt" required>
+                    </div>
+
+                    <div class="textarea form-item">
+                        <label for="">Nội Dung</label>
+                        <textarea name="" id="" required></textarea>
+                    </div>
+                    <div class="submit-btn form-item">
+                        <button type="submit" value="submit" class="btn btn-blue"> Gửi Thông Tin</button>
+
+                    </div>
+            </form>
         </div>
-        <div class="header-text">
-            <h1>Q Holdings</h1>
-            <p>Là đơn vị dẫn đầu trong lĩnh vực kinh doanh bất động sản tại Khu công nghệ cao Hòa Lạc, 
-                Q Holdings tập trung cung cấp dịch vụ Tư vấn Thiết kế và Thi công, Tư vấn đầu tư và Phát triển dự án. 
-                Q Holdings cam kết cung cấp cho khách hàng những giải pháp và dịch vụ toàn diện, 
-                không ngừng gia tăng giá trị, lợi ích tối đa cho mọi khách hàng.</p>
-            <button>Liên Hệ</button>
+    </section>
+    </div>
+    <!-- Footer -->
+    <footer class="pt-100">
+        <div class="container">
+            <a href="#trangchu">
+                <img src="img/Brand-logos/logo.png" alt="logo">
+            </a>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Dự Án</a></li>
+                <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+                <li><a href="#">Đăng Kí</a></li>
+            </ul>
+            <div class="copyright">
+                <h4>Design by Q Holdings </a></h4>    <br>
+            </div>
         </div>
+    </footer>
 
-
-        <footer>
-
-        </footer>
-    </body>
-
+     <!-- Scroll up -->
+     <a href="javascript:void(0)" class="scrollup show">
+        <img src="img/arrow-up.svg" alt="arrow up">
+    </a>
+</body>
+<script src="jquery.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+<script src="main.js"></script>
 </html>
