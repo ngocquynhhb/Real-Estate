@@ -377,15 +377,15 @@ nav {
 
 .lienhe .head{
   text-align: center;
-  background-color: indigo;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
-.lienhe .head:hover{
+/* .lienhe .head:hover{
   text-align: center;
   background-color: green;
   color: white;
-}
+} */
 
 .lienhe-inner {
   padding: 40px 40px;

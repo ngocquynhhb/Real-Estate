@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif ;
+}
+body{
+    margin: 0;
+    padding:0;
+    background: #e9e9e9;
+}
+.content{
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.shadow-box{
+    background: white;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+@media (min-width: 700px) {
+    .shadow-box{
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+.dangki-wrapper .company-details {
+    background: url(../dangnhap/dangnhap1.png);
+    background-size: cover;
+  position:relative;
+
+
+}
+.dangki-wrapper .company-details:before {
+    content: "";
+  position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 100%);
+}
+
+.dangki-wrapper .company-details .wrapper-1{
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 22px;
+
+}
+.dangki-wrapper .company-details .logo {
+    padding: 0 20px;
+    width: 20%;
+    margin: 0 auto;
+}
+/* .dangki-wrapper .company-details .logo .icon-logo {
+    background: url(../img/favicon/android-chrome-512x512.png);
+    background-size:contain ;
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+} */
+.dangki-wrapper .company-details .title {
+    padding: 20px;
+    width: 74%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2em;
+    text-shadow: 1px 1px #4b4a4a;
+    text-align: center;
+  
+}
+.dangki-wrapper .company-details .slogan {
+   display: none;
+}
+
+.dangki-wrapper .dangki-form .wrapper-2{
+    padding: 14px 20px;
+    margin: 30px 80px;
+}
+.dangki-wrapper .dangki-form .form-title{
+    font-size: 1.5em;
+    color:  #000000;
+    padding: 5px;
+    text-align: center;
+
+}
+.dangki-wrapper .dangki-form .form .content-item{
+    text-transform: uppercase;
+    color: #A19F9C;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    margin-top: 35px;
+    text-align: center;
+}
+.dangki-wrapper .dangki-form .form input[type=text],.dangki-wrapper .dangki-form .form input[type=password]{
+    border: none;
+    border-bottom: 1px solid #e4e4e4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+
+    text-align: center;
+    width: 100%;
+}
+.dangki-wrapper .dangki-form .dangki {
+    background-color: #030303;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    margin-top: 49px;
+    border-radius: 5px;
+
+}
+.dangki-wrapper .dangki-form .dangnhap{
+    color: #000000;
+    padding: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.7em;
+    width: 95%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+
+}
+input::placeholder {
+    color: #575757;
+}
+
+@media (min-width: 200px) {
+
+    .dangki-wrapper .dangki-form .wrapper-2{
+        margin: 30px 23px;
+    }
+
+    .dangki-wrapper .company-details .title {
+        width: 90%;
+        font-size: 1.5em;
+    }
+
+}
+@media (min-width: 300px) {
+    .dangki-wrapper .dangki-form .dangnhap{
+        display: inline-block;
+    }
+    .dangki-wrapper .dangki-form .wrapper-2{
+        margin: 30px 60px;
+    }
+
+    .dangki-wrapper .company-details .title {
+        width: 80%;
+       font-size: 2em;
+    }
+
+}
+@media (min-width: 500px) {
+    .dangki-wrapper .dangki-form .dangnhap{
+        display: inline;
+    }
+}
+
+@media (min-width: 700px) {
+    .dangki-wrapper .company-details,
+    .dangki-wrapper .dangki-form {
+        width: 50%;
+    }
+    .dangki-wrapper {
+       display: flex;
+        max-width: 700px;
+        margin: 0 auto;
+        margin-top: 5%;
+    }
+    .dangki-wrapper .company-details .wrapper-1 {
+        padding-bottom: 150px;
+        padding-top: 160px;
+    }
+    .dangki-wrapper .company-details .slogan {
+        padding: 0 20px;
+        width: 70%;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 1.2em;
+        text-align: center;
+        text-shadow: 1px 1px #4b4a4a;
+        display: block;
+    }
+    .dangki-wrapper .company-details .title {
+        width: 76%;
+    }
+    .dangki-wrapper .dangki-form .wrapper-2{
+        padding: 50px 40px;
+        margin: 0;
+    }
+
+    .dangki-wrapper .dangki-form .dangnhap{
+        display: inline;
+    }
+    .dangki-wrapper .dangki-form .form .content-item{
+        text-align: initial;
+    }
+    .dangki-wrapper .dangki-form .form input[type=text],.dangki-wrapper .dangki-form .form input[type=password]{
+        text-align: initial;
+
+    }
+   .dangki-wrapper .dangki-form .form-title{
+        text-align: initial;
+     padding :0;
+    }
+
+}
