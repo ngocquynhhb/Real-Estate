@@ -1,180 +1,219 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
-
-*{
-    margin:0;
-    padding: 0;
+* {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif ;
 }
-
-section{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
+body{
+    margin: 0;
+    padding:0;
+    background: #e9e9e9;
 }
-
-section .img-bg{
-    position: relative;
-    width: 50%;
-    height: 100%;
+.content{
+    width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 
+.shadow-box{
+    background: white;
+}
+p{
+    padding: 0;
+    margin: 0;
+}
+@media (min-width: 700px) {
+    .shadow-box{
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    }
+}
 
-section .img-bg img{
-    position: absolute;
-    top: 0;
+.dangnhap-wrapper .company-details {
+    background: url(../dangnhap/dangnhap1.png);
+    background-size: cover;
+  position:relative;
+
+
+}
+.dangnhap-wrapper .company-details:before {
+    content: "";
+  position: absolute;
+    display: block;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 100%);
 }
 
-section .noi-dung{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100%;
+.dangnhap-wrapper .company-details .wrapper-1{
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 22px;
+
 }
-
-section .noi-dung .form{
-    width: 50%;
+.dangnhap-wrapper .company-details .logo {
+    padding: 0 20px;
+    width: 20%;
+    margin: 0 auto;
 }
-
-
-section .noi-dung .form h2{
-    color: #607d8b;
-    font-weight: 500;
-    font-size: 1.5em;
+/* .dangki-wrapper .company-details .logo .icon-logo {
+    background: url(../img/favicon/android-chrome-512x512.png);
+    background-size:contain ;
+    background-repeat: no-repeat;
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+} */
+.dangnhap-wrapper .company-details .title {
+    padding: 20px;
+    width: 74%;
+    margin: 0 auto;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    border-bottom: 4px solid #ff4584;
-    display: inline-block;
-    letter-spacing: 1px;
-    
-}
-
-section .noi-dung .form .input-form{
-    margin-bottom: 20px;
-}
-
-
-section .noi-dung .form .input-form span{
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: inline-block;
-    color: #607db8;
-    letter-spacing: 1px;
-    
-}
-
-section .noi-dung .form .input-form input{
-    width: 100%;
-    padding: 10px 20px;
-    outline: none;
-    border: 1px solid #607d8b;
-    font-size: 16px;
-    letter-spacing: 1px;
-    color: #607d8b;
-    background: transparent;
-    border-radius: 30px;
-    
-}
-section .noi-dung .form .input-form input[type="submit"]{
-    background: #ff4584;
     color: #fff;
-    outline: none;
-    border: none;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.12), 
-              0 2px 2px rgba(0,0,0,0.12), 
-              0 4px 4px rgba(0,0,0,0.12), 
-              0 8px 8px rgba(0,0,0,0.12),
-              0 16px 16px rgba(0,0,0,0.12);
-}
-
-section .noi-dung .form .input-form input[type="submit"]:hover{
-    background: #f53677;
-}
-section .noi-dung .form .nho-dang-nhap{
-    margin-bottom: 10px;
-    color: #607d8b;
-    font-size: 14px;
-}
-
-section .noi-dung .form .input-form p{
-    color: #607d8b;
-}
-
-section .noi-dung .form .input-form p a{
-    color: #ff4584;
-}
-
-section .noi-dung .form h3{
-    color: #607d8b;
+    font-weight: 600;
+    font-size: 2em;
+    text-shadow: 1px 1px #4b4a4a;
     text-align: center;
-    margin: 80px 0 10px;
-    font-weight: 500;
+  
+}
+.dangnhap-wrapper .company-details .slogan {
+   display: none;
 }
 
-section .noi-dung .form .icon-dang-nhap{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.dangnhap-wrapper .dangnhap-form .wrapper-2{
+    padding: 14px 20px;
+    margin: 30px 80px;
+}
+.dangnhap-wrapper .dangnhap-form .form-title{
+    font-size: 1.5em;
+    color:  #000000;
+    padding: 5px;
+    text-align: center;
+
+}
+.dangnhap-wrapper .dangnhap-form .form .content-item{
+    text-transform: uppercase;
+    color: #A19F9C;
+    font-size: 0.7em;
+    letter-spacing: 1px;
+    margin-top: 35px;
+    text-align: center;
+}
+.dangnhap-wrapper .dangnhap-form .form input[type=text],.dangnhap-wrapper .dangnhap-form .form input[type=password]{
+    border: none;
+    border-bottom: 1px solid #e4e4e4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.dangnhap-wrapper .dangnhap-form .dangnhap {
+    background-color: #030303;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+    text-transform: capitalize;
+    margin-top: 49px;
+    border-radius: 5px;
+
+}
+.dangnhap-wrapper .dangnhap-form .dangki{
+    color: #000000;
+    padding: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.7em;
+    width: 95%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+
+}
+input::placeholder {
+    color: #575757;
 }
 
-section .noi-dung .form .icon-dang-nhap li{
-    list-style: none;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (min-width: 200px) {
+
+    .dangnhap-wrapper .dangnhap-form .wrapper-2{
+        margin: 30px 23px;
+    }
+
+    .dangnhap-wrapper .company-details .title {
+        width: 90%;
+        font-size: 1.5em;
+    }
+
 }
-section .noi-dung .form .icon-dang-nhap li:nth-child(1){
-    color: #3b5999;
+@media (min-width: 300px) {
+    .dangnhap-wrapper .dangnhap-form .dangki{
+        display: inline-block;
+    }
+    .dangnhap-wrapper .dangnhap-form .wrapper-2{
+        margin: 30px 60px;
+    }
+
+    .dangnhap-wrapper .company-details .title {
+        width: 80%;
+       font-size: 2em;
+    }
+
 }
-section .noi-dung .form .icon-dang-nhap li:nth-child(2){
-    color: #dd4b39;
-}
-section .noi-dung .form .icon-dang-nhap li:nth-child(3){
-    color: #55acee;
-}
-section .noi-dung .form .icon-dang-nhap li i{
-    font-size: 24px;
-    
+@media (min-width: 500px) {
+    .dangnhap-wrapper .dangnhap-form .dangki{
+        display: inline;
+    }
 }
 
-@media (max-width: 768px){
-    section .img-bg{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+@media (min-width: 700px) {
+    .dangnhap-wrapper .company-details,
+    .dangnhap-wrapper .dangnhap-form {
+        width: 50%;
     }
-    section .noi-dung{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
+    .dangnhap-wrapper {
+       display: flex;
+        max-width: 700px;
+        margin: 0 auto;
+        margin-top: 5%;
     }
-    section .noi-dung .form{
-        width: 100%;
-        padding: 40px;
-        background: rgba(255 255 255 / 0.9);
-        margin: 50px;
+    .dangnhap-wrapper .company-details .wrapper-1 {
+        padding-bottom: 150px;
+        padding-top: 160px;
     }
-    section .noi-dung .form h3{
-        color: #607d8b;
+    .dangnhap-wrapper .company-details .slogan {
+        padding: 0 20px;
+        width: 70%;
+        margin: 0 auto;
+        color: #fff;
+        font-size: 1.2em;
         text-align: center;
-        margin: 30px 0 10px;
-        font-weight: 500;
+        text-shadow: 1px 1px #4b4a4a;
+        display: block;
     }
+    .dangnhap-wrapper .company-details .title {
+        width: 76%;
+    }
+    .dangnhap-wrapper .dangnhap-form .wrapper-2{
+        padding: 50px 40px;
+        margin: 0;
+    }
+
+    .dangnhap-wrapper .dangnhap-form .dangki{
+        display: inline;
+    }
+    .dangnhap-wrapper .dangnhap-form .form .content-item{
+        text-align: initial;
+    }
+    .dangnhap-wrapper .dangnhap-form .form input[type=text],.dangnhap-wrapper .dangnhap-form .form input[type=password]{
+        text-align: initial;
+
+    }
+   .dangnhap-wrapper .dangnhap-form .form-title{
+        text-align: initial;
+     padding :0;
+    }
+
 }
