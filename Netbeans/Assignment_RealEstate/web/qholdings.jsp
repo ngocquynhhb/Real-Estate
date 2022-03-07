@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<%-- 
+    Document   : qholdings
+    Created on : Mar 7, 2022, 3:29:56 PM
+    Author     : kjuel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -39,8 +40,8 @@ and open the template in the editor.
                         <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
                         <li><a href="#tintuc">Tin Tức</a></li>
                         <li><a href="#lienhe">Liên Hệ</a></li>
-                        <li><a href="dangki/dangki.html">Đăng Kí</a></li>
-                        <li><a href="dangnhap/dangnhap.html" class="btn ">Đăng Nhập</a></li>
+                        <li><a href="dangki/dangki.jsp">Đăng Kí</a></li>
+                        <li><a href="dangnhap" class="btn ">Đăng Nhập</a></li>
                     </ul>
                 </div>
             </nav>

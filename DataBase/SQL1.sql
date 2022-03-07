@@ -1,0 +1,9 @@
+CREATE DATABASE Assignment_PRJ
+USE Assignment_PRJ
+
+CREATE TABLE account
+(
+	idACC INT IDENTITY(1,1) PRIMARY KEY,
+	[user] NVARCHAR(50),
+	pass NVARCHAR(50)
+)
