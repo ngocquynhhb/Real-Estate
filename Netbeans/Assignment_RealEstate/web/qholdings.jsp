@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q Holdings</title>
-    <link rel="stylesheet" href="qholdings.css">
+    <link rel="stylesheet" href="css/qholdings.css">
     <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
 
 <body>
@@ -40,7 +40,7 @@
                         <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
                         <li><a href="#tintuc">Tin Tức</a></li>
                         <li><a href="#lienhe">Liên Hệ</a></li>
-                        <li><a href="dangki/dangki.jsp">Đăng Kí</a></li>
+                        <li><a href="views/dangki.jsp">Đăng Kí</a></li>
                         <li><a href="dangnhap" class="btn ">Đăng Nhập</a></li>
                     </ul>
                 </div>

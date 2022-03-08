@@ -54,7 +54,7 @@
 
 
                                     <button type="submit" class="dangnhap">Đăng Nhập </button>
-                                    <a href="../dangki/dangki.html" class="dangki">Đăng Kí Ngay</a>
+                                    <a href="dangki/dangki.jsp" class="dangki">Đăng Kí Ngay</a>
                                 </form>
                             </div>
                         </div>
