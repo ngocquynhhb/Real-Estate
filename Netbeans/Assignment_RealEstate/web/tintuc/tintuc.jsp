@@ -1,3 +1,10 @@
+<%-- 
+    Document   : tintuc
+    Created on : Mar 9, 2022, 11:28:59 PM
+    Author     : kjuel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -11,9 +18,9 @@ and open the template in the editor.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tin Tức</title>
-  <link rel="stylesheet" type="text/css" href="/web/tintuc/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/web/tintuc/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/web/tintuc/css/tintuc.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/tintuc.css" rel="stylesheet" type="text/css"/>
   <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
 
 <body>
@@ -22,7 +29,7 @@ and open the template in the editor.
     <div class="container">
       <nav class="nav d-flex">
         <a href="qholdings.html" class="logo">
-          <img src="img/Brand-logos/logo4.png" alt="logo">
+          <img src="img/logo4.png" alt="logo"/>
         </a>
         <div class="navigation-bar">
           <ul>
