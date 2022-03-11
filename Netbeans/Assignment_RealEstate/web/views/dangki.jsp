@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Kí</title>
-    <link rel="stylesheet" href="dangki.css">
+    <link href="../css/dangki.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
 
 
                                 <button type="submit" class="dangki">Đăng Kí Ngay </button>
-                                <a href="../dangnhap" class="dangnhap">Đăng Nhập</a>
+                                <a href="dangnhap.jsp" class="dangnhap">Đăng Nhập</a>
                             </form>
                         </div>
                     </div>

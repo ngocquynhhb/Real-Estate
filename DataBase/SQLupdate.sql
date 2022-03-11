@@ -6,32 +6,32 @@ CREATE TABLE account
 	idACC INT IDENTITY(1,1) PRIMARY KEY,
 	[user] NVARCHAR(50),
 	pass NVARCHAR(50),
-	isAdmin INT,
-	isUser INT
 )
 
 CREATE TABLE category
 (
-	idCategory INT PRIMARY KEY,
+	idCategory INT IDENTITY(1,1) PRIMARY KEY,
 	nameCa NVARCHAR(255)
 )
 
 
 CREATE TABLE news 
 (
-	idNews INT PRIMARY KEY,
-	title VARCHAR(255),
-	thumbnail VARCHAR(255),
-	shortDescription TEXT,
-	content TEXT,
+	idNews INT IDENTITY(1,1) PRIMARY KEY,
+	title NVARCHAR(255),
+	thumbnail NVARCHAR(255),
+	shortDescription NVARCHAR(MAX),
+	content NVARCHAR(MAX),
 	idCategory INT FOREIGN KEY REFERENCES category(idCategory)
 )
 
 CREATE TABLE comment
 (
-	idComment INT PRIMARY KEY,
-	content TEXT,    --cm o bai nao
-	createdBy VARCHAR(255),
+	idComment INT IDENTITY(1,1) PRIMARY KEY,
+	content NVARCHAR(MAX),    --cm o bai nao
+	createdBy NVARCHAR(255),
 	idACC INT FOREIGN KEY REFERENCES dbo.account(idACC),
 	idNews INT FOREIGN KEY REFERENCES dbo.news(idNews)
 )
+
+SELECT * FROM dbo.account 

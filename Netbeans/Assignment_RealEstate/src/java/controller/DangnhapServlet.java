@@ -18,7 +18,7 @@ import model.Account;
  *
  * @author kjuel
  */
-public class dangki extends HttpServlet {
+public class DangnhapServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +32,7 @@ public class dangki extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,7 +47,7 @@ public class dangki extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("dangki/dangki.jsp");
+        response.sendRedirect("views/dangnhap.jsp");
     }
 
     /**
@@ -61,21 +61,14 @@ public class dangki extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String us = request.getParameter("user");
-        String pa = request.getParameter("pass");
-        String rpa = request.getParameter("repass");
-        if (!pa.equals(rpa)) {
-            request.getRequestDispatcher("../dangki.jsp").forward(request, response);
-        } else {
-            AccountDAO dao = new AccountDAO();
-            Account a = dao.kiemtraTaikhoan(us);
-            if (a == null) {
-                //dangki
-                dao.dangKi(us, pa);
-                response.sendRedirect("qholdings.jsp");
-            } else {
-                response.sendRedirect("dangki.jsp");
-            }
+         String u = request.getParameter("user");
+        String p = request.getParameter("pass");
+        AccountDAO dao = new AccountDAO();
+        Account a = dao.dangnhap(u, p);
+        if(a == null){
+            request.getRequestDispatcher("views/dangnhap.jsp").forward(request, response);
+        }else{
+            response.sendRedirect("views/qholdings.jsp");
         }
     }
 

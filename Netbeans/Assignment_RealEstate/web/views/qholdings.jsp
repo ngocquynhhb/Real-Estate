@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q Holdings</title>
-    <link rel="stylesheet" href="css/qholdings.css">
+    <link href="../css/qholdings.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
 
 <body>
@@ -20,17 +20,17 @@
     <header>
         <div class="container">
             <nav class="nav d-flex">
-                <a href="qholdings.html" class="logo">
-                    <img src="img/Brand-logos/logo4.png" alt="logo">
+                <a href="qholdings.jsp" class="logo">                 
+                    <img src="../img/Brand-logos/logo4.png" alt="logo">
                 </a>
 
                 <!-- Toggle bar -->
                 <div class="burger">
                     <div class="toggle-open">
-                        <img src="img/toggle-open.svg" alt="toggle open">
+                        <img src="../img/toggle-open.svg" alt="toggle open">
                     </div>
                     <div class="toggle-close">
-                        <img src="img/toggle-close.svg" alt="toggle close">
+                        <img src="../img/toggle-close.svg" alt="toggle close">
                     </div>
                 </div>
                 <div class="navigation-bar">
@@ -40,8 +40,8 @@
                         <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
                         <li><a href="#tintuc">Tin Tức</a></li>
                         <li><a href="#lienhe">Liên Hệ</a></li>
-                        <li><a href="views/dangki.jsp">Đăng Kí</a></li>
-                        <li><a href="dangnhap" class="btn ">Đăng Nhập</a></li>
+                        <li><a href="dangki.jsp">Đăng Kí</a></li>            
+                        <li><a href="dangnhap.jsp" class="btn ">Đăng Nhập</a></li>
                     </ul>
                 </div>
             </nav>
@@ -73,11 +73,11 @@
         <section class="brand pt-100">
             <div class="container">
                 <div class="brand-wrapper d-flex">
-                    <img src="img/Brand-logos/logofpt.png" alt=" brand logo">
-                    <img src="img/Brand-logos/logocen.png" alt=" brand logo">
-                    <img src="img/Brand-logos/logonext.png" alt=" brand logo">
-                    <img src="img/Brand-logos/logovin.png" alt=" brand logo">
-                    <img src="img/Brand-logos/logovt.png" alt=" brand logo">
+                    <img src="../img/Brand-logos/logofpt.png" alt=" brand logo">
+                    <img src="../img/Brand-logos/logocen.png" alt=" brand logo">
+                    <img src="../img/Brand-logos/logonext.png" alt=" brand logo">
+                    <img src="../img/Brand-logos/logovin.png" alt=" brand logo">
+                    <img src="../img/Brand-logos/logovt.png" alt=" brand logo">
                 </div>
 
             </div>
@@ -92,21 +92,21 @@
                 <div class="duan-wrapper d-flex">
                     <!-- Dự Án 1 -->
                     <div class="duan-item">
-                        <img src="img/duan/aduan1.png" alt="duan image" class="img-fluid">
+                        <img src="../img/duan/aduan1.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC HOUSE <span>$ &nbsp; 99.999</span></h3>
                         </div>
                     </div>
                     <!-- Dự Án 2  -->
                     <div class="duan-item">
-                        <img src="img/duan/aduan2.png" alt="duan image" class="img-fluid">
+                        <img src="../img/duan/aduan2.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC MANSION <span>$ &nbsp; 99.999</span></h3>
                         </div>
                     </div>
                     <!-- Dự Án 3  -->
                     <div class="duan-item">
-                        <img src="img/duan/aduan3.png" alt="duan image" class="img-fluid">
+                        <img src="../img/duan/aduan3.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC VILLAS <span>$ &nbsp; 99.999</span></h3>
                         </div>
@@ -119,7 +119,7 @@
             <div class="container">
                 <div class="vechungtoi-wrapper d-flex">
                     <div class="vechungtoi-img">
-                        <img src="img/vechungtoi/vechungtoi2.png" alt="vechungtoi image" class="img-fluid">
+                        <img src="../img/vechungtoi/vechungtoi2.png" alt="vechungtoi image" class="img-fluid">
                     </div>
                     <div class="vechungtoi-content">
                         <h2>Về Chúng Tôi</h2>
@@ -145,7 +145,7 @@
                 <div class="slide-active">
                     <div class="card">
                         <div class="card-img">
-                            <img src="img/tintuc/tintuc2.png" alt="tintuc">
+                            <img src="../img/tintuc/tintuc2.png" alt="tintuc">
                         </div>
                         <div class="card-content">
                             <h4>Tin Tức - Hoà Lạc</h4>
@@ -171,35 +171,35 @@
             <form id="basic-form" action="" method="post">
                 <div class="lienhe-inner d-flex">
                     <div class="input-block form-item">
-                        <label for="">Họ</label>
+                        <label >Họ</label>
                         <input type="text" name="ho" required>
                     </div>
                     <div class="input-block form-item">
-                        <label for="">Tên</label>
+                        <label >Tên</label>
                         <input type="text" name="ten" required>
                     </div>
                     <div class="input-block form-item">
-                        <label for="">Email</label>
+                        <label >Email</label>
                         <input type="email" name="email" required>
                     </div>
                     <div class="input-block form-item">
-                        <label for="">Số Điện Thoại</label>
+                        <label >Số Điện Thoại</label>
                         <input type="text" name="sdt" required>
 
                     </div>
 
                     <div class="textarea form-item">
-                        <label for="">Nội Dung</label>
-                        <textarea name="" id="" required></textarea>
+                        <label>Nội Dung</label>
+                        <textarea name="noidung" required></textarea>
                     </div>
                     <div class="submit-btn form-item">
                         <button type="submit" value="submit" class="btn btn-blue"> Gửi Thông Tin</button>
 
                     </div>
+              </div>       
             </form>
         </div>
     </section>
-    </div>
     <!-- footer -->
     <footer class="site-footer">
         <div class="container">
@@ -209,12 +209,11 @@
     </footer>
     <!-- Scroll up -->
     <a href="javascript:void(0)" class="scrollup show">
-        <img src="img/arrow-up.svg" alt="arrow up">
+        <img src="../img/arrow-up.svg" alt="arrow up">
     </a>
 </body>
-<script src="jquery.min.js"></script>
+<script src="../js/jquery.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
-<script src="main.js"></script>
-
+<script src="../js/main.js" type="text/javascript"></script>
 </html>

@@ -29,11 +29,9 @@ p{
 }
 
 .dangnhap-wrapper .company-details {
-    background: url(../dangnhap/dangnhap1.png);
+    background: url("/web/img/trangchu/trangchu1.jpg");
     background-size: cover;
   position:relative;
-
-
 }
 .dangnhap-wrapper .company-details:before {
     content: "";

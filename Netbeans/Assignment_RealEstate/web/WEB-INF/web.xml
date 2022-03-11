@@ -6,11 +6,11 @@
     </servlet>
     <servlet>
         <servlet-name>dangnhap</servlet-name>
-        <servlet-class>controller.dangnhap</servlet-class>
+        <servlet-class>controller.DangnhapServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>dangki</servlet-name>
-        <servlet-class>controller.dangki</servlet-class>
+        <servlet-class>controller.DangkiServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

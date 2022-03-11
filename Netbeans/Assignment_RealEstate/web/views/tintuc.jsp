@@ -14,22 +14,23 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html lang="vi">
 
-<head>
-  <meta charset="UTF-8">
+    <head>
+        <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tin Tức</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-  <link href="css/tintuc.css" rel="stylesheet" type="text/css"/>
   <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
-
+  <link href="../css/tintuc.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+  
 <body>
   <!-- header -->
   <header>
     <div class="container">
       <nav class="nav d-flex">
         <a href="qholdings.html" class="logo">
-          <img src="img/logo4.png" alt="logo"/>
+          <img src="../img/tintuc/logo4.png" alt="logo"/>
         </a>
         <div class="navigation-bar">
           <ul>
@@ -277,12 +278,15 @@ and open the template in the editor.
         </div>
       </div>
     </div>
-</body>
-<!-- footer -->
-      <footer class="site-footer">
+    <!-- footer -->
+    <footer class="site-footer">
         <div class="container">
             <p class="copyright-text">@Design By Q Holdings
             </p>
         </div>
     </footer>
+    
+</body>
+
+      
 </html>
