@@ -10,10 +10,14 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Trang Tin</title>
+        <title>${news.title}</title>
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link href="css/tintuc.css" rel="stylesheet" type="text/css"/>
+        <!--        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+                <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+                <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
     </head>
 
     <body>    
@@ -25,18 +29,91 @@
                             <span>Tin Tức</span>
                         </div>
                         <div class="section-body">
-                            <c:forEach items="${listN}" var="o" >
-                                <h1 class="post-title">${o.title}</h1>
-                                <div class="post-content">
-                                    <h6>${o.shortDes}</h6>
+                            <h1 class="post-title">${news.title}</h1>
+                            <div class="post-content">
+                                <h6>${news.shortDes}</h6>
+                            </div>
+                            <figure>
+                                <img src="${news.thumbnail}" class="thumb">
+                            </figure>
+                            <div class="post-content">
+                                <p>${news.content}</p>                                                            
+                            </div>
+                            <div class="post-comment">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="page-header">
+                                                <h1><small class="pull-right">45 bình luận</small> Bình luận </h1>
+                                            </div> 
+                                            <div class="comment">
+                                                <div class="textarea form-item">
+                                                    <img src="#"> <h3> Ngọc Quỳnh </h3>
+                                                    <textarea name="noidung" required></textarea>
+                                                </div>
+                                                <div class="submit-btn form-item">
+                                                    <button type="submit" value="submit" class="btn btn-blue"> Gửi Thông Tin</button>
+                                                </div>
+                                            </div>   
+                                            <hr>
+                                            <div class="comments-list">
+                                                <div class="media">
+                                                    <p class="pull-right"><small>5 ngày trước</small></p>
+                                                    <a class="media-left" href="#">
+                                                        <img src="#">
+                                                    </a>
+                                                    <div class="media-body">
+
+                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
+                                                        Uầy!!! Bài viết thật bổ ích.
+
+                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <p class="pull-right"><small>5 ngày trước</small></p>
+                                                    <a class="media-left" href="#">
+                                                        <img src="#">
+                                                    </a>
+                                                    <div class="media-body">
+
+                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
+                                                        Uầy!!! Bài viết thật bổ ích.
+
+                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <p class="pull-right"><small>5 ngày trước</small></p>
+                                                    <a class="media-left" href="#">
+                                                        <img src="#">
+                                                    </a>
+                                                    <div class="media-body">
+
+                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
+                                                        Uầy!!! Bài viết thật bổ ích.
+
+                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                    </div>
+                                                </div>
+                                                <div class="media">
+                                                    <p class="pull-right"><small>5 ngày trước</small></p>
+                                                    <a class="media-left" href="#">
+                                                        <img src="#">
+                                                    </a>
+                                                    <div class="media-body">
+
+                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
+                                                        Uầy!!! Bài viết thật bổ ích.
+
+                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <figure>
-                                    <img src="${o.thumbnail}" class="thumb">
-                                </figure>
-                                <div class="post-content">
-                                    <p>${o.content}</p>                                                            
-                                </div>
-                            </c:forEach>
+                            </div>
                         </div>
                     </div>
                 </div>

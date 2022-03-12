@@ -81,3 +81,4 @@ Hoàn thành giai đoạn 1 của hai dự án đầu tư xây dựng trường 
 ,1)
 GO
 SELECT * FROM dbo.News
+SELECT * FROM dbo.news WHERE idNews = 1

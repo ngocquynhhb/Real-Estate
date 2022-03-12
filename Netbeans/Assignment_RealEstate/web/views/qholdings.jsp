@@ -194,7 +194,6 @@
                     </div>
                     <div class="submit-btn form-item">
                         <button type="submit" value="submit" class="btn btn-blue"> Gửi Thông Tin</button>
-
                     </div>
               </div>       
             </form>
@@ -212,6 +211,7 @@
         <img src="../img/arrow-up.svg" alt="arrow up">
     </a>
 </body>
+ <!-- Scroll up -->
 <script src="../js/jquery.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>

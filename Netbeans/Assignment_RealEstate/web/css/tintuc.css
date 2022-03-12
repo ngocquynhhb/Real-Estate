@@ -219,3 +219,35 @@ footer{
     text-align: center;
     color:#fff;
 }
+/*comment*/
+.user_name{
+    font-size:14px;
+    font-weight: bold;
+}
+.comments-list .media{
+    border-bottom: 1px dotted #ccc;
+}
+.post-comment .textarea textarea {
+  background: rgb(224, 224, 224);
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 50px;
+  border-radius: var(--border-radius);
+  padding: 0 15px;
+  color: var(--color-black);
+  font-size: var(--font-regular);
+  transition: all 0.3s ease-in;
+}
+.post-comment .textarea textarea:focus,
+.post-comment .textarea textarea:hover {
+  border: 1px solid var(--color-blue);
+  outline: none;
+}
+.post-comment .textarea {
+  width: 100%;
+}
+
+.post-comment .textarea textarea {
+  height: 200px;
+  padding: 20px 15px;
+}

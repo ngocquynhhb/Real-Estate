@@ -39,10 +39,30 @@ public class NewsDAO {
                         rs.getInt(6)));
             }
         } catch (Exception e) {
-
         }
 
         return list;
+    }
+    
+    public News getNews(int id) {        
+        String sql = "SELECT * FROM dbo.news WHERE idNews = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                News n = new News();
+                n.setTitle(rs.getString(2));
+                n.setThumbnail(rs.getString(3));
+                n.setShortDes(rs.getString(4));
+                n.setContent(rs.getString(5));
+                return n;
+            }
+        } catch (Exception e) {
+        }
+
+        return null;
     }
     
     //test

@@ -37,12 +37,12 @@ and open the template in the editor.
                         <div class="section-body">
                             <div class="row">
                                 <div class="col-md-7 mb-4">
-                                    <a href="trangtin.jsp">
-                                        <img class="thumb" src="img/tintuc/Tinchinh.png"/>
+                                    <a href="detailservlet?id=${listN.get(0).idNews}">
+                                        <img class="thumb" src="${listN.get(0).thumbnail}"/>
                                     </a>
                                     <div class="main-title">
-                                        <a href="trangtin.jsp">
-                                            Khu Đô Thị Vệ Tinh Hòa Lạc: Sự Chuyển Động Phát Triển Mạnh Mẽ
+                                        <a href="detailservlet?id=${listN.get(0).idNews}">
+                                            ${listN.get(0).title}
                                         </a>
                                     </div>
                                 </div>
@@ -50,13 +50,13 @@ and open the template in the editor.
                                     <div class="col-md-5">
                                         <div class="row">
                                             <div class="col-md-5 mb-4">
-                                                <a href="${o.idNews}">
+                                                <a href="detailservlet?id=${o.idNews}">
                                                     <img class="thumb" src="${o.thumbnail}">
                                                 </a>
                                             </div>
                                             <div class="col-md-7 mb-4">
                                                 <div class="list-title">
-                                                    <a href="${o.idNews}">
+                                                    <a href="detailservlet?id=${o.idNews}">
                                                         ${o.title}
                                                     </a>
                                                 </div>

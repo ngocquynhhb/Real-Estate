@@ -34,12 +34,15 @@ public class DetailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        int id = Integer.parseInt(request.getParameter("id"));
+        
         CategoryDao cd = new CategoryDao();      
         NewsDAO nd = new NewsDAO();
         List<News> listN = nd.getAllNews();
         List<Category> listC = cd.getAllCategory();
-        //
+        News ns = nd.getNews(id);
+        
+        request.setAttribute("news", ns);
         request.setAttribute("listN", listN);
         request.setAttribute("listC", listC);
         request.getRequestDispatcher("views/trangtin.jsp").forward(request, response); 
