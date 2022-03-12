@@ -38,7 +38,7 @@
                         <li class="active"><a href="#trangchu">Trang Chủ</a></li>
                         <li><a href="#duan">Dự Án</a></li>
                         <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
-                        <li><a href="#tintuc">Tin Tức</a></li>
+                        <li><a href="tintuc.jsp">Tin Tức</a></li>
                         <li><a href="#lienhe">Liên Hệ</a></li>
                         <li><a href="dangki.jsp">Đăng Kí</a></li>            
                         <li><a href="dangnhap.jsp" class="btn ">Đăng Nhập</a></li>

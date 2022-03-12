@@ -35,3 +35,8 @@ CREATE TABLE comment
 )
 
 SELECT * FROM dbo.account 
+
+DROP TABLE dbo.category
+DROP TABLE dbo.news
+DROP TABLE dbo.account 
+DROP TABLE dbo.comment

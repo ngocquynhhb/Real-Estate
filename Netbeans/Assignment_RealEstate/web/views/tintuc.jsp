@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -16,277 +17,203 @@ and open the template in the editor.
 
     <head>
         <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tin Tức</title>
-  <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
-  <link href="../css/tintuc.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-  <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tin Tức</title>
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
+        <link href="css/tintuc.css" rel="stylesheet" type="text/css"/>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     </head>
-  
-<body>
-  <!-- header -->
-  <header>
-    <div class="container">
-      <nav class="nav d-flex">
-        <a href="qholdings.html" class="logo">
-          <img src="../img/tintuc/logo4.png" alt="logo"/>
-        </a>
-        <div class="navigation-bar">
-          <ul>
-            <li class="active"><a href="#trangchu">Trang Chủ</a></li>
-            <li><a href="#duan">Dự Án</a></li>
-            <li><a href="#vechungtoi">Về Chúng Tôi </a></li>
-            <li><a href="#tintuc">Tin Tức</a></li>
-            <li><a href="#lienhe">Liên Hệ</a></li>
-            <li><a href="dangki/dangki.html">Đăng Kí</a></li>
-            <li><a href="dangnhap/dangnhap.html" class="btn ">Đăng Nhập</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
 
-  <div class="container page-wrapper">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="section main-section">
-          <h2 class="section-title">
-            <span>Headlines</span>
-          </h2>
-          <div class="section-body">
+    <body>
+        <!-- header -->
+        <div class="container page-wrapper">
             <div class="row">
-              <div class="col-md-7 mb-4">
-                <a href="single.html">
-                  <img class="thumb" src="images/1.jpeg">
-                </a>
-                <div class="main-title">
-                  <a href="single.html">
-                    Lorem ipsum dolor sit amet consectetur adipiscing
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-5">
-                <div class="row">
-                  <div class="col-md-5 mb-4">
-                    <a href="single.html">
-                      <img class="thumb" src="images/2.jpeg">
-                    </a>
-                  </div>
-                  <div class="col-md-7 mb-4">
-                    <div class="list-title">
-                      <a href="single.html">
-                        Lorem ipsum dolor sit amet consectetur adipiscing
-                      </a>
+                <div class="col-md-9">
+                    <div class="section main-section">
+                        <h2 class="section-title">
+                            <span>Tin Tức Nổi Bật</span>
+                        </h2>
+                        <div class="section-body">
+                            <div class="row">
+                                <div class="col-md-7 mb-4">
+                                    <a href="trangtin.jsp">
+                                        <img class="thumb" src="img/tintuc/Tinchinh.png"/>
+                                    </a>
+                                    <div class="main-title">
+                                        <a href="trangtin.jsp">
+                                            Khu Đô Thị Vệ Tinh Hòa Lạc: Sự Chuyển Động Phát Triển Mạnh Mẽ
+                                        </a>
+                                    </div>
+                                </div>
+                                <c:forEach items="${listN}" begin="1" end="3" var="o" >                           
+                                    <div class="col-md-5">
+                                        <div class="row">
+                                            <div class="col-md-5 mb-4">
+                                                <a href="${o.idNews}">
+                                                    <img class="thumb" src="${o.thumbnail}">
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7 mb-4">
+                                                <div class="list-title">
+                                                    <a href="${o.idNews}">
+                                                        ${o.title}
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>   
+                                </c:forEach>   
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-5 mb-4">
-                    <a href="single.html">
-                      <img class="thumb" src="images/3.jpeg">
-                    </a>
-                  </div>
-                  <div class="col-md-7 mb-4">
-                    <div class="list-title">
-                      <a href="single.html">
-                        Lorem ipsum dolor sit amet consectetur adipiscing1
-                      </a>
+                <div class="col-md-3">
+                    <div class="section list-section">
+                        <h2 class="section-title">
+                            <span>Tin Tức Mới Nhất</span>
+                        </h2>
+                        <div class="section-body latest-list">
+                            <c:forEach items="${listN}" var="o">
+                                <div class="list-title">
+                                    <a href="${o.idNews}">
+                                        ${o.title}
+                                    </a>
+                                </div>   
+
+                            </c:forEach>
+
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-5 mb-4">
-                    <a href="single.html">
-                      <img class="thumb" src="images/4.jpeg">
-                    </a>
-                  </div>
-                  <div class="col-md-7 mb-4">
-                    <div class="list-title">
-                      <a href="single.html">
-                        Lorem ipsum dolor sit amet consectetur adipiscing1
-                      </a>
+            </div>
+
+            <br>
+
+            <div class="row" style="margin-bottom:30px;">
+                <div class="col-md-4">
+                    <div class="section cat-section">
+                        <div class="section-title">
+                            <span>Tin Tức - Hoà Lạc</span>
+                        </div>
+                        <div class="section-body">
+                            <a href="single.html">
+                                <img class="thumb" style="border-radius:0;" src="images/6.jpeg">
+                            </a>
+                            <div class="list-title">
+                                <strong>
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </strong>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="col-md-4">
+                    <div class="section cat-section">
+                        <div class="section-title">
+                            <span>Tin Tức Kiến Trúc - Xây Dựng</span>
+                        </div>
+                        <div class="section-body">
+                            <a href="single.html">
+                                <img class="thumb" style="border-radius:0;" src="images/7.jpeg">
+                            </a>
+                            <div class="list-title">
+                                <strong>
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </strong>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="section cat-section">
+                        <div class="section-title">
+                            <span>Tin Tức Bất Động Sản</span>
+                        </div>
+                        <div class="section-body">
+                            <a href="single.html">
+                                <img class="thumb" style="border-radius:0;" src="images/8.jpeg">
+                            </a>
+                            <div class="list-title">
+                                <strong>
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </strong>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                            <div class="list-title">
+                                <a href="single.html">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="section list-section">
-          <h2 class="section-title">
-            <span>Latest</span>
-          </h2>
-          <div class="section-body latest-list">
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <!-- footer -->
 
-    <br>
+        </div>
+    </body>
 
-    <div class="row" style="margin-bottom:30px;">
-      <div class="col-md-4">
-        <div class="section cat-section">
-          <div class="section-title">
-            <span>Tourism</span>
-          </div>
-          <div class="section-body">
-            <a href="single.html">
-              <img class="thumb" style="border-radius:0;" src="images/6.jpeg">
-            </a>
-            <div class="list-title">
-              <strong>
-                <a href="single.html">
-                  Lorem ipsum dolor sit amet consectetur adipiscing
-                </a>
-              </strong>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="section cat-section">
-          <div class="section-title">
-            <span>Culture</span>
-          </div>
-          <div class="section-body">
-            <a href="single.html">
-              <img class="thumb" style="border-radius:0;" src="images/7.jpeg">
-            </a>
-            <div class="list-title">
-              <strong>
-                <a href="single.html">
-                  Lorem ipsum dolor sit amet consectetur adipiscing
-                </a>
-              </strong>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="section cat-section">
-          <div class="section-title">
-            <span>Technology</span>
-          </div>
-          <div class="section-body">
-            <a href="single.html">
-              <img class="thumb" style="border-radius:0;" src="images/8.jpeg">
-            </a>
-            <div class="list-title">
-              <strong>
-                <a href="single.html">
-                  Lorem ipsum dolor sit amet consectetur adipiscing
-                </a>
-              </strong>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-            <div class="list-title">
-              <a href="single.html">
-                Lorem ipsum dolor sit amet consectetur adipiscing
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <p class="copyright-text">@Design By Q Holdings
-            </p>
-        </div>
-    </footer>
-    
-</body>
 
-      
 </html>

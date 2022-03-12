@@ -11,14 +11,14 @@ package model;
  */
 public class Category {
     private int id;
-    private String nameCaString;
+    private String nameCa;
 
     public Category() {
     }
 
-    public Category(int id, String nameCaString) {
+    public Category(int id, String nameCa) {
         this.id = id;
-        this.nameCaString = nameCaString;
+        this.nameCa = nameCa;
     }
 
     public int getId() {
@@ -29,17 +29,17 @@ public class Category {
         this.id = id;
     }
 
-    public String getNameCaString() {
-        return nameCaString;
+    public String getNameCa() {
+        return nameCa;
     }
 
-    public void setNameCaString(String nameCaString) {
-        this.nameCaString = nameCaString;
+    public void setNameCa(String nameCa) {
+        this.nameCa = nameCa;
     }
 
     @Override
     public String toString() {
-        return "Category{" + "id=" + id + ", nameCaString=" + nameCaString + '}';
+        return "Category{" + "id=" + id + ", nameCa=" + nameCa + '}';
     }
 
     
