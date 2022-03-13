@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Kí</title>
-    <link href="../css/dangki.css" rel="stylesheet" type="text/css"/>
+    <link href="css/dangki.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
@@ -21,14 +21,9 @@
         <div class="content">
             <div class="dangki-wrapper shadow-box">
                 <div class="company-details ">
-
+                   
                     <div class="shadow"></div>
                     <div class="wrapper-1">
-                        <div class="logo">
-                            <div class="icon-logo">
-
-                            </div>
-                        </div>
                         <h1 class="title">Đăng kí</h1>
                         <div class="slogan">Q Holdings</div>
                     </div>
@@ -38,7 +33,7 @@
                     <div class="wrapper-2">
                         <div class="form-title">Đăng Kí Ngay!</div>
                         <div class="form">
-                            <form action="../dangki" method="post">
+                            <form action="signup" method="post">
                                 <p class="content-item">
                                     <label>Tài Khoản
                                         <input type="text" placeholder="abc" name="user" required>
@@ -60,7 +55,7 @@
 
 
                                 <button type="submit" class="dangki">Đăng Kí Ngay </button>
-                                <a href="dangnhap.jsp" class="dangnhap">Đăng Nhập</a>
+                                <a href="login" class="dangnhap">Đăng Nhập</a>
                             </form>
                         </div>
                     </div>

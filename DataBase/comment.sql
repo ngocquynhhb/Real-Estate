@@ -14,3 +14,6 @@ SELECT n.*, c.content AS commentcontent, a.[user] AS usercomment FROM dbo.news A
 JOIN dbo.comment AS c ON n.idNews = c.idNews
 JOIN dbo.account AS a ON a.idACC = c.idACC
 
+SELECT idNews,title,thumbnail,shortDescription FROM  ((dbo.news
+INNER JOIN dbo.comment ON comment.idNews = news.idNews)
+INNER JOIN dbo.account ON 

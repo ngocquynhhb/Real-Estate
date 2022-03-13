@@ -6,7 +6,7 @@
 :root {
   --color-first: #000000; 
   --color-second: #000000;
-  --color-third: #ffffff;
+/*  --color-third: #ffffff;*/
   --color-fourth: #000000; 
   --color-white: #fff;
   /* Font Size */
@@ -47,7 +47,7 @@ p {
   font-family: "Open Sans", sans-serif;
   font-size: var(--text-regular);
   font-weight: 200;
-  color: var(--color-third);
+  color: black;
   line-height: 159.1%;
 }
 h1,
@@ -67,7 +67,7 @@ h2 {
 }
 h4,
 h3 {
-  color: var(--color-third);
+  color: white;
   font-size: var(--text-small);
   font-weight: var(--font-weight-regular);
   margin-bottom: 13px;
@@ -126,7 +126,7 @@ main {
   cursor: pointer;
 }
 .btn:hover {
-  background-color: var(--color-third);
+  background-color: white;
   color: rgb(0, 0, 0);
   box-shadow: none;
 }
@@ -261,7 +261,7 @@ nav {
   }
 
   .navigation-bar ul li a {
-    color: var(--color-third);
+    color: white;
   }
 
   .navigation-bar ul li a:hover {

@@ -13,14 +13,18 @@ public class Account {
     private int id;
     private String user;
     private String pass;
+    private int isAdmin;
+    private int isUser;
 
     public Account() {
     }
 
-    public Account(int id, String user, String pass) {
+    public Account(int id, String user, String pass, int isAdmin, int isUser) {
         this.id = id;
         this.user = user;
         this.pass = pass;
+        this.isAdmin = isAdmin;
+        this.isUser = isUser;
     }
 
     public int getId() {
@@ -47,9 +51,25 @@ public class Account {
         this.pass = pass;
     }
 
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public int getIsUser() {
+        return isUser;
+    }
+
+    public void setIsUser(int isUser) {
+        this.isUser = isUser;
+    }
+
     @Override
     public String toString() {
-        return "Account{" + "id=" + id + ", user=" + user + ", passg=" + pass + '}';
+        return "Account{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", isAdmin=" + isAdmin + ", isUser=" + isUser + '}';
     }
-      
-    }
+    
+}

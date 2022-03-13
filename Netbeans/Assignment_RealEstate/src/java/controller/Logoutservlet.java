@@ -5,23 +5,19 @@
  */
 package controller;
 
-import dal.CategoryDao;
-import dal.NewsDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.News;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author kjuel
  */
-public class CategoryServlet extends HttpServlet {
+public class Logoutservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,25 +30,9 @@ public class CategoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        
-        CategoryDao cd = new CategoryDao();      
-        NewsDAO nd = new NewsDAO();
-        List<News> listN = cd.getNewsByCategorys(cateID);
-        
-        request.setAttribute("listN", listN);
-        request.getRequestDispatcher("views/theloai.jsp").forward(request, response);
-//        List<Category> listC = cd.getAllCategory();
-        
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        CategoryDao cd = new CategoryDao();
-//        List<Category> listC = cd.getAllCategory();
-//        Category ct = cd.getCategory(id);
-////        //
-//        request.setAttribute("cate", ct);
-//        request.setAttribute("listC", listC);
-//        request.getRequestDispatcher("/views/theloai.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        session.removeAttribute("acc");
+        response.sendRedirect("home");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -81,6 +61,7 @@ public class CategoryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         processRequest(request, response);
     }
 

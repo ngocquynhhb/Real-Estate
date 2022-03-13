@@ -5,23 +5,21 @@
  */
 package controller;
 
-import dal.CategoryDao;
-import dal.NewsDAO;
+import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.News;
+import javax.servlet.http.HttpSession;
+import model.Account;
 
 /**
  *
  * @author kjuel
  */
-public class CategoryServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,25 +32,7 @@ public class CategoryServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        
-        CategoryDao cd = new CategoryDao();      
-        NewsDAO nd = new NewsDAO();
-        List<News> listN = cd.getNewsByCategorys(cateID);
-        
-        request.setAttribute("listN", listN);
-        request.getRequestDispatcher("views/theloai.jsp").forward(request, response);
-//        List<Category> listC = cd.getAllCategory();
-        
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        CategoryDao cd = new CategoryDao();
-//        List<Category> listC = cd.getAllCategory();
-//        Category ct = cd.getCategory(id);
-////        //
-//        request.setAttribute("cate", ct);
-//        request.setAttribute("listC", listC);
-//        request.getRequestDispatcher("/views/theloai.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -67,7 +47,7 @@ public class CategoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        request.getRequestDispatcher("views/dangnhap.jsp").forward(request, response);
     }
 
     /**
@@ -81,7 +61,17 @@ public class CategoryServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String u = request.getParameter("user");
+        String p = request.getParameter("pass");
+        AccountDAO dao = new AccountDAO();
+        Account a = dao.login(u, p);
+        if (a == null) {
+            request.getRequestDispatcher("views/dangnhap.jsp").forward(request, response);
+        } else {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", a);
+            response.sendRedirect("home");
+        }
     }
 
     /**

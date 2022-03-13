@@ -13,7 +13,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Đăng Nhập</title>
-        <link href="../css/dangnhap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/dangnhap.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
@@ -23,7 +23,7 @@
                     <div class="company-details ">
 
                         <div class="shadow"></div>
-                        <div class="wrapper-1" style="background: url('/web/img/BG.png');">
+                        <div class="wrapper-1">
                             <div class="logo">
                                 <div class="icon-logo">
                                     
@@ -38,23 +38,19 @@
                         <div class="wrapper-2">
                             <div class="form-title">Đăng Nhập!</div>
                             <div class="form">
-                                <form action="dangnhap" method="post">
+                                <form action="login" method="post">
                                     <p class="content-item">
                                         <label>Tài Khoản
                                             <input type="text" placeholder="abc" name="user" required>
                                         </label>
                                     </p>
-
                                     <p class="content-item">
-
                                         <label>Mật Khẩu
                                             <input type="password" placeholder="*****" name="pass" required>
                                         </label>
                                     </p>
-
-
                                     <button type="submit" class="dangnhap">Đăng Nhập </button>
-                                    <a href="dangki.jsp" class="dangki">Đăng Kí Ngay</a>
+                                    <a href="signup" class="dangki">Đăng Kí Ngay</a>
                                 </form>
                             </div>
                         </div>

@@ -14,39 +14,12 @@
     <title>Q Holdings</title>
     <link href="../css/qholdings.css" rel="stylesheet" type="text/css"/>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
-
+</head>
+    
+    
 <body>
     <!-- header -->
-    <header>
-        <div class="container">
-            <nav class="nav d-flex">
-                <a href="qholdings.jsp" class="logo">                 
-                    <img src="../img/Brand-logos/logo4.png" alt="logo">
-                </a>
-
-                <!-- Toggle bar -->
-                <div class="burger">
-                    <div class="toggle-open">
-                        <img src="../img/toggle-open.svg" alt="toggle open">
-                    </div>
-                    <div class="toggle-close">
-                        <img src="../img/toggle-close.svg" alt="toggle close">
-                    </div>
-                </div>
-                <div class="navigation-bar">
-                    <ul>
-                        <li class="active"><a href="#trangchu">Trang Chủ</a></li>
-                        <li><a href="#duan">Dự Án</a></li>
-                        <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
-                        <li><a href="tintuc.jsp">Tin Tức</a></li>
-                        <li><a href="#lienhe">Liên Hệ</a></li>
-                        <li><a href="dangki.jsp">Đăng Kí</a></li>            
-                        <li><a href="dangnhap.jsp" class="btn ">Đăng Nhập</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <jsp:include page="header.jsp"></jsp:include>
 
     <!-- Main -->
     <main>
@@ -73,11 +46,11 @@
         <section class="brand pt-100">
             <div class="container">
                 <div class="brand-wrapper d-flex">
-                    <img src="../img/Brand-logos/logofpt.png" alt=" brand logo">
-                    <img src="../img/Brand-logos/logocen.png" alt=" brand logo">
-                    <img src="../img/Brand-logos/logonext.png" alt=" brand logo">
-                    <img src="../img/Brand-logos/logovin.png" alt=" brand logo">
-                    <img src="../img/Brand-logos/logovt.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logofpt.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logocen.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logonext.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logovin.png" alt=" brand logo">
+                    <img src="img/Brand-logos/logovt.png" alt=" brand logo">
                 </div>
 
             </div>
@@ -92,21 +65,21 @@
                 <div class="duan-wrapper d-flex">
                     <!-- Dự Án 1 -->
                     <div class="duan-item">
-                        <img src="../img/duan/aduan1.png" alt="duan image" class="img-fluid">
+                        <img src="img/duan/aduan1.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC HOUSE <span>$ &nbsp; 99.999</span></h3>
                         </div>
                     </div>
                     <!-- Dự Án 2  -->
                     <div class="duan-item">
-                        <img src="../img/duan/aduan2.png" alt="duan image" class="img-fluid">
+                        <img src="img/duan/aduan2.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC MANSION <span>$ &nbsp; 99.999</span></h3>
                         </div>
                     </div>
                     <!-- Dự Án 3  -->
                     <div class="duan-item">
-                        <img src="../img/duan/aduan3.png" alt="duan image" class="img-fluid">
+                        <img src="img/duan/aduan3.png" alt="duan image" class="img-fluid">
                         <div class="duan-content ">
                             <h3 class="d-flex">MC VILLAS <span>$ &nbsp; 99.999</span></h3>
                         </div>
@@ -119,7 +92,7 @@
             <div class="container">
                 <div class="vechungtoi-wrapper d-flex">
                     <div class="vechungtoi-img">
-                        <img src="../img/vechungtoi/vechungtoi2.png" alt="vechungtoi image" class="img-fluid">
+                        <img src="img/vechungtoi/vechungtoi2.png" alt="vechungtoi image" class="img-fluid">
                     </div>
                     <div class="vechungtoi-content">
                         <h2>Về Chúng Tôi</h2>
@@ -145,7 +118,7 @@
                 <div class="slide-active">
                     <div class="card">
                         <div class="card-img">
-                            <img src="../img/tintuc/tintuc2.png" alt="tintuc">
+                            <img src="img/tintuc/tintuc2.png" alt="tintuc">
                         </div>
                         <div class="card-content">
                             <h4>Tin Tức - Hoà Lạc</h4>
@@ -200,20 +173,15 @@
         </div>
     </section>
     <!-- footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <p class="copyright-text">@Design By Q Holdings
-            </p>
-        </div>
-    </footer>
+    <jsp:include page="footer.jsp"></jsp:include>
     <!-- Scroll up -->
     <a href="javascript:void(0)" class="scrollup show">
-        <img src="../img/arrow-up.svg" alt="arrow up">
+        <img src="img/arrow-up.svg" alt="arrow up">
     </a>
 </body>
- <!-- Scroll up -->
-<script src="../js/jquery.min.js" type="text/javascript"></script>
+ <!-- JS up -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
-<script src="../js/main.js" type="text/javascript"></script>
+<script src="js/main.js" type="text/javascript"></script>
 </html>

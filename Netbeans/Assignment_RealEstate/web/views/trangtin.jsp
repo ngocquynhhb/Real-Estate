@@ -15,21 +15,18 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
         <link href="css/tintuc.css" rel="stylesheet" type="text/css"/>
-        <!--        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-                <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-                <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
     </head>
-
-    <body>    
-        <div class="container page-wrapper">
-            <div class="row">
-                <div class="col-md-9">
-                    <div class="section">
-                        <div class="section-title">
-                            <span>Tin Tức</span>
-                        </div>
-                        <div class="section-body">
-                            <h1 class="post-title">${news.title}</h1>
+    <jsp:include page="header.jsp"></jsp:include>
+        <body>    
+            <div class="container page-wrapper pt-100">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="section">
+                            <div class="section-title">
+                                <span>Tin Tức</span>
+                            </div>
+                            <div class="section-body">
+                                <h1 class="post-title">${news.title}</h1>
                             <div class="post-content">
                                 <h6>${news.shortDes}</h6>
                             </div>
@@ -42,9 +39,9 @@
                             <div class="post-comment">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
                                             <div class="page-header">
-                                                <h1><small class="pull-right">45 bình luận</small> Bình luận </h1>
+                                                <h2><small class="pull-right">45 bình luận</small> Bình luận </h2>
                                             </div> 
                                             <div class="comment">
                                                 <div class="textarea form-item">
@@ -151,5 +148,6 @@
                 </div>                
             </div>
         </div>
+        <jsp:include page="footer.jsp"></jsp:include>
     </body>
 </html>

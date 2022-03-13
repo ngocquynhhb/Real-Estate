@@ -41,7 +41,49 @@ public class CategoryDao {
 
         return list;
     }
-    
+
+    public List<News> getNewsByCategorys(String cid) {
+        List<News> list = new ArrayList<>();
+        String sql = "SELECT * FROM dbo.news\n"
+                + " WHERE idCategory = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new News(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6)));
+            }
+        } catch (Exception e) {
+
+        }
+
+        return list;
+    }
+
+    public Category getCategory(int id) {
+        String sql = "SELECT * FROM dbo.category WHERE idCategory = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Category c = new Category();
+                c.setNameCa(rs.getString(2));
+                return c;
+            }
+        } catch (Exception e) {
+        }
+
+        return null;
+    }
+
     //test
     public static void main(String[] args) {
         CategoryDao cd = new CategoryDao();

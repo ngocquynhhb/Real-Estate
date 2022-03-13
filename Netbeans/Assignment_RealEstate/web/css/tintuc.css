@@ -12,6 +12,7 @@ body{
     text-decoration: none;
 }
 .page-wrapper a:hover{
+    gap: 20px;
     color:#009270;
 }
 .section{

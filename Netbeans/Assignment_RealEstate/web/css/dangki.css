@@ -29,10 +29,9 @@ p{
 }
 
 .dangki-wrapper .company-details {
-    background: url(../dangnhap/dangnhap1.png);
+    background: url(../img/BG.png);
     background-size: cover;
   position:relative;
-
 
 }
 .dangki-wrapper .company-details:before {

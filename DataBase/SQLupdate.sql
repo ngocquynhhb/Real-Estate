@@ -6,14 +6,16 @@ CREATE TABLE account
 	idACC INT IDENTITY(1,1) PRIMARY KEY,
 	[user] NVARCHAR(50),
 	pass NVARCHAR(50),
+	isAdmin INT,
+	isUser INT
 )
+
 
 CREATE TABLE category
 (
 	idCategory INT IDENTITY(1,1) PRIMARY KEY,
 	nameCa NVARCHAR(255)
 )
-
 
 CREATE TABLE news 
 (
@@ -22,8 +24,10 @@ CREATE TABLE news
 	thumbnail NVARCHAR(255),
 	shortDescription NVARCHAR(MAX),
 	content NVARCHAR(MAX),
+	idACC INT FOREIGN KEY REFERENCES dbo.account(idACC),
 	idCategory INT FOREIGN KEY REFERENCES category(idCategory)
 )
+
 
 CREATE TABLE comment
 (
@@ -35,7 +39,7 @@ CREATE TABLE comment
 )
 
 SELECT * FROM dbo.account 
-
+SELECT * FROM dbo.news
 DROP TABLE dbo.category
 DROP TABLE dbo.news
 DROP TABLE dbo.account 
