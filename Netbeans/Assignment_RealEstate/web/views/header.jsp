@@ -44,7 +44,7 @@
                         <li><a href="login" class="btn ">Đăng Nhập</a></li>
                     </c:if>
                     <c:if test="${sessionScope.acc.isAdmin == 1}">
-                        <li><a href="login">Quản lý</a></li>
+                        <li><a href="manager">Quản Trị</a></li>
                     </c:if>
                     <c:if test="${sessionScope.acc != null}">
                         <li><a>${sessionScope.acc.user}</a></li>

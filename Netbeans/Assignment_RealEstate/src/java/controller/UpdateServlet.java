@@ -21,7 +21,7 @@ import model.News;
  *
  * @author kjuel
  */
-public class DetailServlet extends HttpServlet {
+public class UpdateServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,18 +34,21 @@ public class DetailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int id = Integer.parseInt(request.getParameter("id"));  
-        CategoryDao cd = new CategoryDao();      
+        response.setContentType("text/html;charset=UTF-8");
+        String id = request.getParameter("id");
+//        System.out.println(id);
         NewsDAO nd = new NewsDAO();
-        List<News> listN = nd.getAllNews();
+        CategoryDao cd = new CategoryDao();
+        News n =  nd.getNews(Integer.parseInt(id));
         List<Category> listC = cd.getAllCategory();
-        News ns = nd.getNews(id);
+
+        request.setAttribute("data", n);
         
-        request.setAttribute("news", ns);
-        request.setAttribute("listN", listN);
+        System.out.println(n.getIdNews());
+        
         request.setAttribute("listC", listC);
-        request.getRequestDispatcher("views/trangtin.jsp").forward(request, response); 
+        request.getRequestDispatcher("views/capnhat.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -35,24 +35,17 @@ public class CategoryServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String cateID = request.getParameter("cid");
-        
+        int cateID = Integer.parseInt(request.getParameter("cid"));      
         CategoryDao cd = new CategoryDao();      
         NewsDAO nd = new NewsDAO();
-        List<News> listN = cd.getNewsByCategorys(cateID);
+        List<News> listN = cd.getNewsByCategorys(cateID); 
+        List<Category> listC = cd.getAllCategory();
+        Category cate = cd.getCategory(cateID);
         
+        request.setAttribute("cate", cate);
         request.setAttribute("listN", listN);
+        request.setAttribute("listC", listC);
         request.getRequestDispatcher("views/theloai.jsp").forward(request, response);
-//        List<Category> listC = cd.getAllCategory();
-        
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        CategoryDao cd = new CategoryDao();
-//        List<Category> listC = cd.getAllCategory();
-//        Category ct = cd.getCategory(id);
-////        //
-//        request.setAttribute("cate", ct);
-//        request.setAttribute("listC", listC);
-//        request.getRequestDispatcher("/views/theloai.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

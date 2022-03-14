@@ -37,7 +37,7 @@ and open the template in the editor.
                         <div class="col-md-9">
                             <div class="section main-section">
                                 <h2 class="section-title">
-                                    <span><a style="color: white" href="category?id=${listC.get(0).id}">Tin Tức Nổi Bật</a></span>
+                                    <span><a style="color: white" href="category?cid=${listC.get(0).id}">Tin Tức Nổi Bật</a></span>
                             </h2>
                             <div class="section-body">
                                 <div class="row">
@@ -77,7 +77,7 @@ and open the template in the editor.
                     <div class="col-md-3">
                         <div class="section list-section">
                             <h2 class="section-title">
-                                <span><a style="color: white" href="category?id=${listC.get(1).id}">Tin Tức Mới Nhất</a></span>
+                                <span><a style="color: white" href="category?cid=${listC.get(1).id}">Tin Tức Mới Nhất</a></span>
                             </h2>
                             <div class="section-body latest-list">
                                 <c:forEach items="${listN}" var="o">

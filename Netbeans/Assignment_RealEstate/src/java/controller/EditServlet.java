@@ -5,23 +5,21 @@
  */
 package controller;
 
-import dal.CategoryDao;
 import dal.NewsDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Category;
-import model.News;
+import javax.servlet.http.HttpSession;
+import model.Account;
 
 /**
  *
  * @author kjuel
  */
-public class DetailServlet extends HttpServlet {
+public class EditServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,18 +32,20 @@ public class DetailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int id = Integer.parseInt(request.getParameter("id"));  
-        CategoryDao cd = new CategoryDao();      
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        String id = request.getParameter("id");
+        String title = request.getParameter("title");
+        String img = request.getParameter("image");
+        String shod = request.getParameter("shortDes");
+        String cont = request.getParameter("content");
+        String cate = request.getParameter("category");
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("acc");
+        int aid = a.getId();
         NewsDAO nd = new NewsDAO();
-        List<News> listN = nd.getAllNews();
-        List<Category> listC = cd.getAllCategory();
-        News ns = nd.getNews(id);
-        
-        request.setAttribute("news", ns);
-        request.setAttribute("listN", listN);
-        request.setAttribute("listC", listC);
-        request.getRequestDispatcher("views/trangtin.jsp").forward(request, response); 
+        nd.editNews(title, img, shod, cont, cate, aid, id);
+        response.sendRedirect("manager");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

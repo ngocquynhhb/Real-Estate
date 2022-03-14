@@ -19,136 +19,138 @@
 
     <body>
         <jsp:include page="header.jsp"></jsp:include>  
-            <div class="container page-wrapper">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="section">
-                            <div class="section-title">
-                                <span>"category?id=${o.id}</span>
+            <div class="container-fluid page-wrapper pt-100">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="section">
+                                <div class="section-title">
+                                    <span>${requestScope.cate.nameCa}</span>
+                            </div>
+                            <div class="section-body">
+                                <c:forEach items="${listN}" begin="1" end="5" var="o">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="detail?id=${o.idNews}">
+                                                <img class="thumb" src="${o.thumbnail}">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4 class="bold">
+                                                <a href="detail?id=${o.idNews}">
+                                                    ${o.title}
+                                                </a>
+                                            </h4>
+                                            <p class="summary">${o.shortDes}</p>
+                                        </div>
+                                    </div>                          
+                                    <hr>   
+                                </c:forEach>
+                            </div>
                         </div>
-                        <div class="section-body">
-                            <c:forEach items="${listN}" begin="1" end="5" var="o">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="section related-section">
+                            <div class="section-title">
+                                <span>Related</span>
+                            </div>
+                            <div class="section-body">
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <a href="detail?id=${o.idNews}">
-                                            <img class="thumb" src="${o.thumbnail}">
+                                    <div class="col-md-5">
+                                        <a href="single.html">
+                                            <img src="images/10.jpeg" class="thumb">
                                         </a>
                                     </div>
-                                    <div class="col-md-8">
-                                        <h4 class="bold">
-                                            <a href="detail?id=${o.idNews}">
-                                                ${o.title}
-                                            </a>
-                                        </h4>
-                                        <p class="summary">${o.shortDes}</p>
+                                    <div class="col-md-7">
+                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
                                     </div>
-                                </div>                          
-                                <hr>   
-                            </c:forEach>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="section related-section">
-                        <div class="section-title">
-                            <span>Related</span>
-                        </div>
-                        <div class="section-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <a href="single.html">
-                                        <img src="images/10.jpeg" class="thumb">
-                                    </a>
                                 </div>
-                                <div class="col-md-7">
-                                    <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <a href="single.html">
+                                            <img src="images/11.jpeg" class="thumb">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <a href="single.html">
-                                        <img src="images/11.jpeg" class="thumb">
-                                    </a>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <a href="single.html">
+                                            <img src="images/1.jpeg" class="thumb">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                    </div>
                                 </div>
-                                <div class="col-md-7">
-                                    <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <a href="single.html">
+                                            <img src="images/4.jpeg" class="thumb">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <a href="single.html">
-                                        <img src="images/1.jpeg" class="thumb">
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
-                                    <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <a href="single.html">
-                                        <img src="images/4.jpeg" class="thumb">
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
-                                    <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <a href="single.html">
-                                        <img src="images/7.jpeg" class="thumb">
-                                    </a>
-                                </div>
-                                <div class="col-md-7">
-                                    <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <a href="single.html">
+                                            <img src="images/7.jpeg" class="thumb">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="section list-section">
-                        <h2 class="section-title">
-                            <span>Latest</span>
-                        </h2>
-                        <div class="section-body latest-list">
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
-                            </div>
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
-                            </div>
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
-                            </div>
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
-                            </div>
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
-                            </div>
-                            <div class="list-title">
-                                <a href="single.html">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing
-                                </a>
+                        <div class="section list-section">
+                            <h2 class="section-title">
+                                <span>Latest</span>
+                            </h2>
+                            <div class="section-body latest-list">
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
+                                <div class="list-title">
+                                    <a href="single.html">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
     </body>
 </html>

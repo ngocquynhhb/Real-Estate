@@ -42,14 +42,14 @@ public class CategoryDao {
         return list;
     }
 
-    public List<News> getNewsByCategorys(String cid) {
+    public List<News> getNewsByCategorys(int cid) {
         List<News> list = new ArrayList<>();
         String sql = "SELECT * FROM dbo.news\n"
                 + " WHERE idCategory = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setString(1, cid);
+            ps.setInt(1, cid);
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new News(rs.getInt(1),
@@ -57,7 +57,9 @@ public class CategoryDao {
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getInt(6)));
+                        rs.getInt(6),
+                        new Category(rs.getInt(7),
+                                rs.getString(8))));
             }
         } catch (Exception e) {
 
@@ -68,6 +70,24 @@ public class CategoryDao {
 
     public Category getCategory(int id) {
         String sql = "SELECT * FROM dbo.category WHERE idCategory = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Category c = new Category();
+                c.setNameCa(rs.getString(2));
+                return c;
+            }
+        } catch (Exception e) {
+        }
+
+        return null;
+    }
+
+    public Category getCategoryById(int id) {
+        String sql = "SELECT * FROM dbo.news WHERE idNews = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(sql);

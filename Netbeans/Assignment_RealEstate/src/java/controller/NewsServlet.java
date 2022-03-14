@@ -14,6 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import model.Account;
 import model.Category;
 import model.News;
 
@@ -35,15 +37,15 @@ public class NewsServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //
-        CategoryDao cd = new CategoryDao();      
+
+        CategoryDao cd = new CategoryDao();
         NewsDAO nd = new NewsDAO();
         List<News> listN = nd.getAllNews();
         List<Category> listC = cd.getAllCategory();
-        //
+
         request.setAttribute("listN", listN);
         request.setAttribute("listC", listC);
-        request.getRequestDispatcher("views/tintuc.jsp").forward(request, response);     
+        request.getRequestDispatcher("views/tintuc.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

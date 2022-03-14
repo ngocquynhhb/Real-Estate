@@ -10,23 +10,36 @@ package model;
  * @author kjuel
  */
 public class News {
+
     private int idNews;
     private String title;
     private String thumbnail;
     private String shortDes;
     private String content;
-    private int idCategory;
+    private int idACC;
+    private Category gory;
+    
+    
 
     public News() {
     }
 
-    public News(int idNews, String title, String thumbnail, String shortDes, String content, int idCategory) {
+    public News(int idNews, String title, String thumbnail, String shortDes, String content, int idACC, Category gory) {
         this.idNews = idNews;
         this.title = title;
         this.thumbnail = thumbnail;
         this.shortDes = shortDes;
         this.content = content;
-        this.idCategory = idCategory;
+        this.idACC = idACC;
+        this.gory = gory;
+    }
+
+    public Category getGory() {
+        return gory;
+    }
+
+    public void setGory(Category gory) {
+        this.gory = gory;
     }
 
     public int getIdNews() {
@@ -69,18 +82,17 @@ public class News {
         this.content = content;
     }
 
-    public int getIdCategory() {
-        return idCategory;
+    public int getIdACC() {
+        return idACC;
     }
 
-    public void setIdCategory(int idCategory) {
-        this.idCategory = idCategory;
+    public void setIdACC(int idACC) {
+        this.idACC = idACC;
     }
 
     @Override
     public String toString() {
-        return "News{" + "idNews=" + idNews + ", title=" + title + ", thumbnail=" + thumbnail + ", shortDes=" + shortDes + ", content=" + content + ", idCategory=" + idCategory + '}';
+        return "News{" + "idNews=" + idNews + ", title=" + title + ", thumbnail=" + thumbnail + ", shortDes=" + shortDes + ", content=" + content + ", idACC=" + idACC + ", gory=" + gory + '}';
     }
-    
-    
+
 }
