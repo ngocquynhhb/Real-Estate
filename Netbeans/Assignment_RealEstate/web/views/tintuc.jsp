@@ -80,6 +80,9 @@ and open the template in the editor.
                                 <span><a style="color: white" href="category?cid=${listC.get(1).id}">${listC.get(1).nameCa}</a></span>
                             </h2>
                             <div class="section-body latest-list">
+                                <a href="detail?id=${listN.get(24).idNews}">
+                                            <img class="thumb" src="${listN.get(24).thumbnail}"/>
+                                        </a>
                                 <c:forEach items="${listN}" var="o">
                                     <c:if  test="${o.gory.id == listC.get(1).id}">
                                        <div class="list-title">
@@ -103,9 +106,9 @@ and open the template in the editor.
                                 <span><a style="color: white" href="category?id=${listC.get(2).id}">${listC.get(2).nameCa}</a></span>
                             </div>
                             <div class="section-body">
-                                <a href="single.html">
-                                    <img class="thumb" style="border-radius:0;" src="img/trangchu/trangchu1.jpg">
-                                </a>
+                             <a href="detail?id=${listN.get(11).idNews}">
+                                            <img class="thumb" src="${listN.get(11).thumbnail}"/>
+                                        </a>
                                 
                                 <c:forEach items="${listN}" var="o">
                                     <c:if  test="${o.gory.id == listC.get(2).id}">
@@ -126,9 +129,9 @@ and open the template in the editor.
                                 <span><a style="color: white" href="category?id=${listC.get(3).id}">${listC.get(3).nameCa}</a></span>
                             </div>
                             <div class="section-body">
-                                <a href="single.html">
-                                    <img class="thumb" style="border-radius:0;" src="images/7.jpeg">
-                                </a>
+                               <a href="detail?id=${listN.get(12).idNews}">
+                                            <img class="thumb" src="${listN.get(12).thumbnail}"/>
+                                        </a>
                                 <c:forEach items="${listN}" var="o">
                                     <c:if  test="${o.gory.id == listC.get(3).id}">
                                        <div class="list-title">
@@ -148,9 +151,9 @@ and open the template in the editor.
                                 <span><a style="color: white" href="category?id=${listC.get(4).id}">${listC.get(4).nameCa}</a></span>
                             </div>
                             <div class="section-body">
-                                <a href="single.html">
-                                    <img class="thumb" style="border-radius:0;" src="images/8.jpeg">
-                                </a>
+                                <a href="detail?id=${listN.get(22).idNews}">
+                                            <img class="thumb" src="${listN.get(22).thumbnail}"/>
+                                        </a>
                                 <c:forEach items="${listN}" var="o">
                                     <c:if  test="${o.gory.id == listC.get(4).id}">
                                        <div class="list-title">

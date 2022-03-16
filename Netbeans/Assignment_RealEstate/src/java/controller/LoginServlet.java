@@ -9,6 +9,7 @@ import dal.AccountDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,6 +48,19 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Cookie arr[] = request.getCookies();
+        if (arr != null) {
+            for (Cookie c : arr) {
+                if (c.getName().equals("userC")) {
+                    request.setAttribute("username", c.getValue());
+                }
+                if (c.getName().equals("passC")) {
+                    request.setAttribute("password", c.getValue());
+                }
+            }
+        }
+
         request.getRequestDispatcher("views/dangnhap.jsp").forward(request, response);
     }
 
@@ -63,13 +77,30 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         String u = request.getParameter("user");
         String p = request.getParameter("pass");
+        String remember = request.getParameter("remember");
         AccountDAO dao = new AccountDAO();
         Account a = dao.login(u, p);
         if (a == null) {
+            request.setAttribute("mess", "Tài khoản hoặc mật khẩu sai!");
             request.getRequestDispatcher("views/dangnhap.jsp").forward(request, response);
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
+            session.setMaxInactiveInterval(1000);
+
+            Cookie uc = new Cookie("userC", u);
+            Cookie pc = new Cookie("passC", p);
+            uc.setMaxAge(60);
+
+            if (remember != null) {
+                pc.setMaxAge(60);
+            } else {
+                pc.setMaxAge(0);
+            }
+
+            response.addCookie(uc);
+            response.addCookie(pc);
+
             response.sendRedirect("home");
         }
     }

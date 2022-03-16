@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Quản Trị</title>
+        <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,7 +35,7 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm Tin Tức Mới</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xoá</span></a>						
+<!--                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xoá</span></a>						-->
                         </div>
                     </div>
                 </div>
@@ -82,7 +83,6 @@
                     </tbody>
                 </table>
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                     <ul class="pagination">
                         <li class="page-item disabled"><a href="manager?index=${tag - 1}">Trước</a></li>
 
@@ -94,12 +94,12 @@
                         </c:forEach>
 
 
-                        <li class="page-item"><a href="manager?index=${tag + 1}" class="page-link">Next</a></li>
+                        <li class="page-item"><a href="manager?index=${tag + 1}" class="page-link">Sau</a></li>
                     </ul>
                 </div>
             </div>
-            <a href="home"><button type="button" class="btn btn-primary">Quay về trang chủ</button>
-
+            <a href="home"><button type="button" class="btn btn-primary">Quay về trang chủ</button></a>
+            
         </div>
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
@@ -187,7 +187,7 @@
             </div>
         </div>
         <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+<!--        <div id="deleteEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -206,8 +206,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </a>
+        </div>-->
     <script src="js/manager.js" type="text/javascript"></script>
 
 </body>

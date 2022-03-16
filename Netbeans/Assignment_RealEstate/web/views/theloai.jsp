@@ -28,7 +28,7 @@
                                     <span>${requestScope.cate.nameCa}</span>
                             </div>
                             <div class="section-body">
-                                <c:forEach items="${listN}" begin="1" end="5" var="o">
+                                <c:forEach items="${listN}" var="o">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <a href="detail?id=${o.idNews}">
@@ -52,107 +52,41 @@
                     <div class="col-md-3">
                         <div class="section related-section">
                             <div class="section-title">
-                                <span>Related</span>
+                                <span>Tin Tức</span>
                             </div>
                             <div class="section-body">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <a href="single.html">
-                                            <img src="images/10.jpeg" class="thumb">
-                                        </a>
+                                <c:forEach items="${listN}"  var="o">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <a href="detail?id=${o.idNews}">
+                                                <img src="${o.thumbnail}" class="thumb">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <a href="detail?id=${o.idNews}" class="related-title">${o.title}</a>
+                                        </div>
                                     </div>
-                                    <div class="col-md-7">
-                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <a href="single.html">
-                                            <img src="images/11.jpeg" class="thumb">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <a href="single.html">
-                                            <img src="images/1.jpeg" class="thumb">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <a href="single.html">
-                                            <img src="images/4.jpeg" class="thumb">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <a href="single.html">
-                                            <img src="images/7.jpeg" class="thumb">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <a href="single.html" class="related-title">Lorem ipsum dolor sit amet consectetur adipiscing</a>
-                                    </div>
-                                </div>
+                                    <hr>
+                                </c:forEach>
                             </div>
                         </div>
                         <div class="section list-section">
                             <h2 class="section-title">
-                                <span>Latest</span>
+                                <span>Thể loại khác</span>
                             </h2>
                             <div class="section-body latest-list">
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
+                                <c:forEach items="${listC}" var="o" >
+                                    <ul class="section-body latest-list">
+                                        <li class="list-title"><a href="category?cid=${o.id}"> ${o.nameCa}</a></li>                             
+                                    </ul>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>            
         </div>
-    
+
         <jsp:include page="footer.jsp"></jsp:include>                   
     </body>
 </html>

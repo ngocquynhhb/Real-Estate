@@ -36,16 +36,12 @@ public class UpdateServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-//        System.out.println(id);
         NewsDAO nd = new NewsDAO();
         CategoryDao cd = new CategoryDao();
         News n =  nd.getNews(Integer.parseInt(id));
         List<Category> listC = cd.getAllCategory();
 
         request.setAttribute("data", n);
-        
-        System.out.println(n.getIdNews());
-        
         request.setAttribute("listC", listC);
         request.getRequestDispatcher("views/capnhat.jsp").forward(request, response);
 

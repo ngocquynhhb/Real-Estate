@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Kí</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/favicon/favicon-32x32.png" />
     <link href="css/dangki.css" rel="stylesheet" type="text/css"/>
 </head>
 
