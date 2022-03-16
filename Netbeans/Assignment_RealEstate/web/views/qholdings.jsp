@@ -37,7 +37,7 @@
                             triển dự án.
                             Q Holdings cam kết cung cấp cho khách hàng những giải pháp và dịch vụ toàn diện,
                             không ngừng gia tăng giá trị, lợi ích tối đa cho mọi khách hàng. </h4>
-                        <a href="#" class="btn">Liên Hệ Ngay</a>
+                        <a href="#lienhe" class="btn">Liên Hệ Ngay</a>
                     </div>
                 </div>
             </div>
@@ -102,8 +102,6 @@
                         <p>Q ý thức được rằng chất lượng sản phẩm,
                             dịch vụ chính là chìa khoá vạn năng mở cánh cửa thành công và
                             xây dựng một niềm tin vững chắc từ khách hàng. </p>
-
-                        <a href="#" class="btn">Đọc Thêm</a>
                     </div>
                 </div>
             </div>
@@ -129,7 +127,7 @@
                                 Khu CNC Hoà Lạc là trung tâm nghiên cứu phát triển và
                                 ứng dụng công nghệ cao cấp Quốc gia.
                             </p>
-                            <a href="#" class="btn">Đọc Thêm</a>
+                            <a href="news" class="btn">Đọc Thêm</a>
                         </div>
                     </div>
                 </div>

@@ -5,26 +5,20 @@
  */
 package controller;
 
-import dal.CategoryDao;
-import dal.Dao;
 import dal.NewsDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Account;
-import model.Category;
 import model.News;
 
 /**
  *
  * @author kjuel
  */
-public class ManagerServlet extends HttpServlet {
+public class ListServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,9 +32,24 @@ public class ManagerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-
-      
+//        String indexPage = request.getParameter("index");
+//        if (indexPage == null) {
+//            indexPage = "1";
+//        }
+//        int index = Integer.parseInt(indexPage);
+//
+//        NewsDAO nd = new NewsDAO();
+//        int count = nd.getTotalNews();
+//        int endPage = count / 5;
+//        if (count % 5 != 0) {
+//            endPage++;
+//        }
+//        List<News> listN = nd.pagingNews(index);
+//
+//        request.setAttribute("listN", listN);
+//        request.setAttribute("endP", endPage);
+//        request.setAttribute("tag", index);
+//        request.getRequestDispatcher("manager").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -55,34 +64,7 @@ public class ManagerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("acc");     
-        
-        
-        String indexPage = request.getParameter("index");
-        if (indexPage == null) {
-            indexPage = "1";
-        }
-        int index = Integer.parseInt(indexPage);
-        int id = a.getId();
-        NewsDAO nd = new NewsDAO();
-        int count = nd.getTotalNews();
-        int endPage = count / 5;
-        if (count % 5 != 0) {
-            endPage++;
-        }
-        
-        CategoryDao cd = new CategoryDao();
-//        List<News> listN = nd.getNewsByAdmin(id);
-        List<Category> listC = cd.getAllCategory();
-        List<News> listN = nd.pagingNews(id,index);
-        
-        request.setAttribute("listN", listN);
-        request.setAttribute("endP", endPage);
-        request.setAttribute("tag", index);
-        request.setAttribute("listC", listC);
-//        request.setAttribute("listN", listN);
-        request.getRequestDispatcher("views/quantri.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -96,6 +78,7 @@ public class ManagerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**

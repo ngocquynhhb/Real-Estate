@@ -44,8 +44,7 @@ public class CategoryDao {
 
     public List<News> getNewsByCategorys(int cid) {
         List<News> list = new ArrayList<>();
-        String sql = "SELECT * FROM dbo.news\n"
-                + " WHERE idCategory = ?";
+        String sql = "SELECT [idNews] ,[title] ,[thumbnail] ,[shortDescription] ,[content] ,news.idACC,category.idCategory ,nameCa FROM [dbo].[news],dbo.category WHERE news.idCategory = category.idCategory AND news.idCategory = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(sql);
@@ -105,11 +104,13 @@ public class CategoryDao {
     }
 
     //test
-    public static void main(String[] args) {
-        CategoryDao cd = new CategoryDao();
-        List<Category> list = cd.getAllCategory();
-        for (Category o : list) {
-            System.out.println(o);
-        }
-    }
+//    public static void main(String[] args) {
+//        CategoryDao cd = new CategoryDao();
+//        NewsDAO nd = new NewsDAO();
+//        List<News> listN = nd.
+//        List<Category> list = cd.getNewsByCategorys(1);
+//        for (Category o : list) {
+//            System.out.println(o);
+//        }
+//    }
 }

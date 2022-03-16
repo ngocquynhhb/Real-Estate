@@ -23,7 +23,7 @@
                 height: 120px;
             }
         </style>
-        
+
     <body>
         <div class="container">
             <div class="table-wrapper">
@@ -84,17 +84,21 @@
                 <div class="clearfix">
                     <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        <li class="page-item disabled"><a href="manager?index=${tag - 1}">Trước</a></li>
+
+                        <c:forEach begin="1" end="${endP}" var="i">
+
+                           
+                            <li class="page-item"><a href="manager?index=${i}" class="page-link">${i}</a></li>
+
+                        </c:forEach>
+
+
+                        <li class="page-item"><a href="manager?index=${tag + 1}" class="page-link">Next</a></li>
                     </ul>
                 </div>
             </div>
-            <a href="#"><button type="button" class="btn btn-primary">Back to home</button>
+            <a href="home"><button type="button" class="btn btn-primary">Quay về trang chủ</button>
 
         </div>
         <!-- Edit Modal HTML -->
@@ -205,5 +209,6 @@
         </div>
     </a>
     <script src="js/manager.js" type="text/javascript"></script>
+
 </body>
 </html>

@@ -34,9 +34,9 @@
             </div>
             <div class="navigation-bar">
                 <ul>
-                    <li class="active"><a href="#trangchu">Trang Chủ</a></li>
+                    <li class="active"><a href="home">Trang Chủ</a></li>
                     <!--<li><a href="#duan">Dự Án</a></li>-->
-                    <li><a href="#vechungtoi">Về Chúng Tôi </a></li>                      
+<!--                    <li><a href="home">Về Chúng Tôi </a></li>                      -->
                     <li><a href="news">Tin Tức</a></li>
                     <!--<li><a href="#lienhe">Liên Hệ</a></li>-->
                     <li><a href="signup">Đăng Kí</a></li> 

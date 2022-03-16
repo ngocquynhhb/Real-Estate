@@ -41,71 +41,31 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="page-header">
-                                                <h2><small class="pull-right">45 bình luận</small> Bình luận </h2>
+                                                <h6><small class="pull-right">45 bình luận</small> Bình luận </h6>
                                             </div> 
                                             <div class="comment">
-                                                <div class="textarea form-item">
-                                                    <img src="#"> <h3> Ngọc Quỳnh </h3>
-                                                    <textarea name="noidung" required></textarea>
+                                                <div class="form-item">
+                                                    <h6> Admin </h6>
+                                                    <input  name="noidung">
+                                                    
                                                 </div>
                                                 <div class="submit-btn form-item">
-                                                    <button type="submit" value="submit" class="btn btn-blue"> Gửi Thông Tin</button>
+                                                    <button type="submit" value="submit"> Gửi Thông Tin</button>
                                                 </div>
                                             </div>   
                                             <hr>
                                             <div class="comments-list">
-                                                <div class="media">
-                                                    <p class="pull-right"><small>5 ngày trước</small></p>
-                                                    <a class="media-left" href="#">
-                                                        <img src="#">
-                                                    </a>
-                                                    <div class="media-body">
 
-                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
-                                                        Uầy!!! Bài viết thật bổ ích.
-
-                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
-                                                    </div>
-                                                </div>
-                                                <div class="media">
-                                                    <p class="pull-right"><small>5 ngày trước</small></p>
-                                                    <a class="media-left" href="#">
-                                                        <img src="#">
-                                                    </a>
-                                                    <div class="media-body">
-
-                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
-                                                        Uầy!!! Bài viết thật bổ ích.
-
-                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
-                                                    </div>
-                                                </div>
-                                                <div class="media">
-                                                    <p class="pull-right"><small>5 ngày trước</small></p>
-                                                    <a class="media-left" href="#">
-                                                        <img src="#">
-                                                    </a>
-                                                    <div class="media-body">
-
-                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
-                                                        Uầy!!! Bài viết thật bổ ích.
-
-                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
-                                                    </div>
-                                                </div>
-                                                <div class="media">
-                                                    <p class="pull-right"><small>5 ngày trước</small></p>
-                                                    <a class="media-left" href="#">
-                                                        <img src="#">
-                                                    </a>
-                                                    <div class="media-body">
-
-                                                        <h4 class="media-heading user_name">Ngọc Quỳnh</h4>
-                                                        Uầy!!! Bài viết thật bổ ích.
-
-                                                        <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
-                                                    </div>
-                                                </div>
+                                                <c:forEach begin="1" end="3">
+                                                    <div class="media">
+                                                        <p class="pull-right"><small>5 ngày trước</small></p>
+                                                        <div class="media-body">
+                                                            <p class="media-heading user_name">Admin</p>
+                                                            Uầy!!! Bài viết thật bổ ích.
+                                                            <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                        </div>
+                                                    </div> 
+                                                </c:forEach>
                                             </div>
                                         </div>
                                     </div>
@@ -121,15 +81,20 @@
                             <span>Tin Nóng</span>
                         </div>
                         <div class="section-body">
-                            <c:forEach items="${listN}" var="o">
+                            <c:forEach items="${listN}" begin="7" end="11" var="o">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <img src="${o.thumbnail}" class="thumb">
+                                        <a href="detail?id=${o.idNews}">
+                                            <img class="thumb" src="${o.thumbnail}">
+                                        </a>
                                     </div>
                                     <div class="col-md-7">
-                                        <span class="related-title">${o.title}</span>
+                                        <a href="detail?id=${o.idNews}">
+                                            ${o.title}
+                                        </a>
                                     </div>
-                                </div>                               
+                                </div> 
+                                <hr>
                             </c:forEach>                            
                         </div>
                     </div>
@@ -139,9 +104,9 @@
                         <h2 class="section-title">
                             <span>Thể Loại</span>
                         </h2>
-                        <c:forEach items="${listC}" var="o">
+                        <c:forEach items="${listC}" var="o" >
                             <ul class="section-body latest-list">
-                                <li class="list-title"><a href="#"> ${o.nameCa}</a></li>                             
+                                <li class="list-title"><a href="category?cid=${o.id}"> ${o.nameCa}</a></li>                             
                             </ul>
                         </c:forEach>
                     </div> 

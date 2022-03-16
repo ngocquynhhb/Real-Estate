@@ -26,15 +26,7 @@ public class NewsDAO {
 
     public List<News> getAllNews() {
         List<News> list = new ArrayList<>();
-        String sql = "SELECT [idNews]\n"
-                + "      ,[title]\n"
-                + "      ,[thumbnail]\n"
-                + "      ,[shortDescription]\n"
-                + "      ,[content]\n"
-                + "      ,news.idACC,category.idCategory    \n"
-                + "	  ,nameCa\n"
-                + "  FROM [dbo].[news],dbo.category,dbo.account\n"
-                + "  WHERE news.idCategory = category.idCategory AND news.idACC =account.idACC AND isAdmin = ?";
+        String sql = "SELECT [idNews] ,[title] ,[thumbnail] ,[shortDescription] ,[content] ,news.idACC,category.idCategory ,nameCa FROM [dbo].[news],dbo.category WHERE news.idCategory = category.idCategory";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(sql);
@@ -127,7 +119,7 @@ public class NewsDAO {
         }
     }
 
-    public void editNews(String title, String image, String shortDes, String content, String category, int aid,String nid) {
+    public void editNews(String title, String image, String shortDes, String content, String category, int aid, String nid) {
         String sql = "UPDATE [dbo].[news]\n"
                 + "   SET [title] = ?\n"
                 + "      ,[thumbnail] = ?\n"
@@ -152,6 +144,46 @@ public class NewsDAO {
         }
     }
 
+    public int getTotalNews() {
+        String sql = "SELECT  COUNT(idNews) FROM dbo.news";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+
+            }
+        } catch (Exception e) {
+        }
+        return 0;
+    }
+
+    public List<News> pagingNews(int idAcc, int index) {
+        List<News> list = new ArrayList<>();
+        String sql = "SELECT [idNews] ,[title] ,[thumbnail] ,[shortDescription] ,[content] ,news.idACC,category.idCategory ,nameCa FROM [dbo].[news],dbo.category WHERE news.idCategory = category.idCategory AND idACC = ? ORDER BY idNews OFFSET ? ROW FETCH NEXT 5 ROW ONLY ";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, idAcc);
+            ps.setInt(2, (index - 1) * 5);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new News(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        new Category(rs.getInt(7),
+                                rs.getString(8))));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+
     public void deleteNews(String nid) {
         String sql = "DELETE FROM dbo.news \n"
                 + "WHERE idNews = ?";
@@ -167,7 +199,7 @@ public class NewsDAO {
     //test
     public static void main(String[] args) {
         NewsDAO nd = new NewsDAO();
-        List<News> list = nd.getNewsByAdmin(1);
+        List<News> list = nd.pagingNews(1,1);
         for (News o : list) {
             System.out.println(o);
         }

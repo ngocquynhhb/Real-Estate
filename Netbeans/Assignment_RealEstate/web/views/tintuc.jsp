@@ -77,16 +77,18 @@ and open the template in the editor.
                     <div class="col-md-3">
                         <div class="section list-section">
                             <h2 class="section-title">
-                                <span><a style="color: white" href="category?cid=${listC.get(1).id}">Tin Tức Mới Nhất</a></span>
+                                <span><a style="color: white" href="category?cid=${listC.get(1).id}">${listC.get(1).nameCa}</a></span>
                             </h2>
                             <div class="section-body latest-list">
                                 <c:forEach items="${listN}" var="o">
-                                    <div class="list-title">
-                                        <a href="${o.idNews}">
+                                    <c:if  test="${o.gory.id == listC.get(1).id}">
+                                       <div class="list-title">
+                                        <a href="detail?id=${o.idNews}">
                                             ${o.title}
                                         </a>
                                     </div>   
-                                </c:forEach>
+                                    </c:if>
+                                 </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -98,117 +100,66 @@ and open the template in the editor.
                     <div class="col-md-4">
                         <div class="section cat-section">
                             <div class="section-title">
-                                <span><a style="color: white" href="category?id=${listC.get(2).id}">Tin Tức - Hoà Lạc</a></span>
+                                <span><a style="color: white" href="category?id=${listC.get(2).id}">${listC.get(2).nameCa}</a></span>
                             </div>
                             <div class="section-body">
                                 <a href="single.html">
                                     <img class="thumb" style="border-radius:0;" src="img/trangchu/trangchu1.jpg">
                                 </a>
-                                <div class="list-title">
-                                    <strong>
-                                        <a href="single.html">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing
+                                
+                                <c:forEach items="${listN}" var="o">
+                                    <c:if  test="${o.gory.id == listC.get(2).id}">
+                                       <div class="list-title">
+                                        <a href="detail?id=${o.idNews}">
+                                            ${o.title}
                                         </a>
-                                    </strong>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
+                                    </div>   
+                                    </c:if>
+                                 </c:forEach>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="section cat-section">
                             <div class="section-title">
-                                <span><a style="color: white" href="category?id=${listC.get(3).id}">Tin Tức Kiến Trúc - Xây Dựng</a></span>
+                                <span><a style="color: white" href="category?id=${listC.get(3).id}">${listC.get(3).nameCa}</a></span>
                             </div>
                             <div class="section-body">
                                 <a href="single.html">
                                     <img class="thumb" style="border-radius:0;" src="images/7.jpeg">
                                 </a>
-                                <div class="list-title">
-                                    <strong>
-                                        <a href="single.html">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing
+                                <c:forEach items="${listN}" var="o">
+                                    <c:if  test="${o.gory.id == listC.get(3).id}">
+                                       <div class="list-title">
+                                        <a href="detail?id=${o.idNews}">
+                                            ${o.title}
                                         </a>
-                                    </strong>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
+                                    </div>   
+                                    </c:if>
+                                 </c:forEach>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="section cat-section">
                             <div class="section-title">
-                                <span><a style="color: white" href="category?id=${listC.get(4).id}">Tin Tức Bất Động Sản</a></span>
+                                <span><a style="color: white" href="category?id=${listC.get(4).id}">${listC.get(4).nameCa}</a></span>
                             </div>
                             <div class="section-body">
                                 <a href="single.html">
                                     <img class="thumb" style="border-radius:0;" src="images/8.jpeg">
                                 </a>
-                                <div class="list-title">
-                                    <strong>
-                                        <a href="single.html">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing
+                                <c:forEach items="${listN}" var="o">
+                                    <c:if  test="${o.gory.id == listC.get(4).id}">
+                                       <div class="list-title">
+                                        <a href="detail?id=${o.idNews}">
+                                            ${o.title}
                                         </a>
-                                    </strong>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
-                                <div class="list-title">
-                                    <a href="single.html">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing
-                                    </a>
-                                </div>
+                                    </div>   
+                                    </c:if>
+                                 </c:forEach>
                             </div>
                         </div>
                     </div>
