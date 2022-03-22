@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author kjuel
@@ -15,7 +18,8 @@ public class Account {
     private String pass;
     private int isAdmin;
     private int isUser;
-
+    private List<Comment> listCM = new ArrayList<>();
+    
     public Account() {
     }
 
@@ -27,6 +31,14 @@ public class Account {
         this.isUser = isUser;
     }
 
+    public List<Comment> getListCM() {
+        return listCM;
+    }
+
+    public void setListCM(List<Comment> listCM) {
+        this.listCM = listCM;
+    }
+ 
     public int getId() {
         return id;
     }

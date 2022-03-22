@@ -29,11 +29,11 @@ public class DBContext {
     private final String userID = "sa";
     private final String password = "123456";
     
-//    public static void main(String[] args) {
-//        try {
-//            System.out.println(new DBContext().getConnection());
-//        } catch (Exception e) {
-//        }
-//    }
+    public static void main(String[] args) {
+        try {
+            System.out.println(new DBContext().getConnection());
+        } catch (Exception e) {
+        }
+    }
 }
  

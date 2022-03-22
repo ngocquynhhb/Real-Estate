@@ -5,6 +5,9 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author kjuel
@@ -18,9 +21,8 @@ public class News {
     private String content;
     private int idACC;
     private Category gory;
+    private List<Comment> listCMN = new ArrayList<>();
     
-    
-
     public News() {
     }
 
@@ -32,6 +34,14 @@ public class News {
         this.content = content;
         this.idACC = idACC;
         this.gory = gory;
+    }
+
+    public List<Comment> getListCMN() {
+        return listCMN;
+    }
+
+    public void setListCMN(List<Comment> listCMN) {
+        this.listCMN = listCMN;
     }
 
     public Category getGory() {

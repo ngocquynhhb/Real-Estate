@@ -5,26 +5,23 @@
  */
 package controller;
 
-import dal.CategoryDao;
 import dal.CommentDAO;
 import dal.NewsDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Account;
-import model.Category;
-import model.Comment;
 import model.News;
 
 /**
  *
  * @author kjuel
  */
-public class DetailServlet extends HttpServlet {
+public class CommentServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,7 +34,16 @@ public class DetailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            String content = request.getParameter("content");
+            Account acc = (Account) request.getSession().getAttribute("acc");
+            int id = Integer.parseInt(request.getParameter("id"));
+            
+            
+            new CommentDAO().addComments(content, acc.getId(),id);
+            response.sendRedirect("detail?id=" + id);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,19 +58,7 @@ public class DetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        CategoryDao cd = new CategoryDao();
-        NewsDAO nd = new NewsDAO();
-        List<News> listN = nd.getAllNews();
-        List<Category> listC = cd.getAllCategory();
-        List<Comment> listCM = new CommentDAO().CommentsNews(id);
-        News ns = nd.getNews(id);
-
-        request.setAttribute("listCM", listCM);
-        request.setAttribute("news", ns);
-        request.setAttribute("listN", listN);
-        request.setAttribute("listC", listC);
-        request.getRequestDispatcher("views/trangtin.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**
@@ -78,7 +72,7 @@ public class DetailServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**

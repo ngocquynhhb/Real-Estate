@@ -56,6 +56,14 @@
         <servlet-name>ListServlet</servlet-name>
         <servlet-class>controller.ListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CommentServlet</servlet-name>
+        <servlet-class>controller.CommentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCommentServlet</servlet-name>
+        <servlet-class>controller.DeleteCommentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewsServlet</servlet-name>
         <url-pattern>/news</url-pattern>
@@ -111,6 +119,14 @@
     <servlet-mapping>
         <servlet-name>ListServlet</servlet-name>
         <url-pattern>/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommentServlet</servlet-name>
+        <url-pattern>/comment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCommentServlet</servlet-name>
+        <url-pattern>/deletecomment</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

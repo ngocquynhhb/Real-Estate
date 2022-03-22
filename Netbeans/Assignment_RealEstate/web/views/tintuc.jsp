@@ -168,6 +168,8 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
+                   
+                                        
             <!-- footer -->
             <jsp:include page="footer.jsp"></jsp:include>
         </div>

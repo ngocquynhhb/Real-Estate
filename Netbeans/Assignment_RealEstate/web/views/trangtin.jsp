@@ -41,28 +41,38 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="page-header">
-                                                <h6><small class="pull-right">45 bình luận</small> Bình luận </h6>
+                                                <h6> Bình luận </h6>
                                             </div> 
-                                            <div class="comment">
-                                                <div class="form-item">
-                                                    <h6> Admin </h6>
-                                                    <input  name="noidung">
-                                                    
-                                                </div>
-                                                <div class="submit-btn form-item">
-                                                    <button type="submit" value="submit"> Gửi Thông Tin</button>
-                                                </div>
-                                            </div>   
-                                            <hr>
-                                            <div class="comments-list">
+                                            <c:if test="${sessionScope.acc != null}">
+                                                <form action="comment" method="get">
+                                                    <div class="comment">
+                                                        <div>
+                                                            <div  class="form-item">
+                                                                <h6>${sessionScope.acc.user} </h6>
+                                                                <input type="text" name="content" value="" />
+                                                                <input type="hidden" name="id" value="${requestScope.news.idNews}" />
+                                                            </div>
+                                                            <div class="submit-btn form-item">
+                                                                <button type="submit" value="submit"> Bình luận</button>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </form>
+                                                <hr>               
+                                            </c:if>
+                                            <c:if test="${sessionScope.acc == null}">
+                                                <p>Hãy đăng nhập để bình luận
+                                                    <button><a href="login"> Đăng Nhập </a> </button>
+                                                </p>
+                                                <hr> 
+                                            </c:if>
 
-                                                <c:forEach begin="1" end="3">
+                                            <div class="comments-list">
+                                                <c:forEach items="${listCM}" var="o">
                                                     <div class="media">
-                                                        <p class="pull-right"><small>5 ngày trước</small></p>
                                                         <div class="media-body">
-                                                            <p class="media-heading user_name">Admin</p>
-                                                            Uầy!!! Bài viết thật bổ ích.
-                                                            <p><small><a href="">Thích</a> - <a href="">Chia sẻ</a></small></p>
+                                                            <p class="media-heading user_name">${o.createdBy}</p>
+                                                            ${o.contentCm}
                                                         </div>
                                                     </div> 
                                                 </c:forEach>

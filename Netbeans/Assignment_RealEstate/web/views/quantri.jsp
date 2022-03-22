@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm Tin Tức Mới</span></a>
-<!--                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xoá</span></a>						-->
+                            <!--                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Xoá</span></a>						-->
                         </div>
                     </div>
                 </div>
@@ -76,10 +76,18 @@
                                 <td>${o.gory.nameCa}</td>
                                 <td>
                                     <a href="update?id=${o.idNews}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="delete?nid=${o.idNews}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    <a onclick="doDelete(${o.idNews})" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
                             </tr>
-                        </c:forEach>
+                        <script>
+                            function doDelete(id) {
+                                var c = confirm("Bạn có muốn xoá bài viểt id = " + id + "?");
+                                if (c) {
+                                    window.location.href = "delete?nid=${o.idNews}" + id;
+                                }
+                            }
+                        </script>
+                    </c:forEach>
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -88,7 +96,7 @@
 
                         <c:forEach begin="1" end="${endP}" var="i">
 
-                           
+
                             <li class="page-item"><a href="manager?index=${i}" class="page-link">${i}</a></li>
 
                         </c:forEach>
@@ -99,7 +107,7 @@
                 </div>
             </div>
             <a href="home"><button type="button" class="btn btn-primary">Quay về trang chủ</button></a>
-            
+
         </div>
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
@@ -187,27 +195,27 @@
             </div>
         </div>
         <!-- Delete Modal HTML -->
-<!--        <div id="deleteEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">						
-                            <h4 class="modal-title">Delete Product</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <!--        <div id="deleteEmployeeModal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">						
+                                    <h4 class="modal-title">Delete Product</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">					
+                                    <p>Are you sure you want to delete these Records?</p>
+                                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                </div>
+                            </form>
                         </div>
-                        <div class="modal-body">					
-                            <p>Are you sure you want to delete these Records?</p>
-                            <p class="text-warning"><small>This action cannot be undone.</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>-->
-    <script src="js/manager.js" type="text/javascript"></script>
+                    </div>
+                </div>-->
+        <script src="js/manager.js" type="text/javascript"></script>
 
-</body>
+    </body>
 </html>
